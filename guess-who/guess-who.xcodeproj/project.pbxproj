@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85CFD4191AAFDB2A0022FAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */; };
+		85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */; };
+		85CFD41E1AAFDB2A0022FAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */; };
+		85CFD4201AAFDB2A0022FAEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */; };
+		85CFD4231AAFDB2A0022FAEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */; };
+		85CFD42F1AAFDB2B0022FAEF /* guess_whoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85CFD4291AAFDB2B0022FAEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85CFD40B1AAFDB2A0022FAEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CFD4121AAFDB2A0022FAEF;
+			remoteInfo = "guess-who";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		85CFD4131AAFDB2A0022FAEF /* guess-who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guess-who.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CFD4171AAFDB2A0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85CFD41D1AAFDB2A0022FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		85CFD4221AAFDB2A0022FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guess-whoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CFD42D1AAFDB2B0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guess_whoTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85CFD4101AAFDB2A0022FAEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85CFD4251AAFDB2B0022FAEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85CFD40A1AAFDB2A0022FAEF = {
+			isa = PBXGroup;
+			children = (
+				85CFD4151AAFDB2A0022FAEF /* guess-who */,
+				85CFD42B1AAFDB2B0022FAEF /* guess-whoTests */,
+				85CFD4141AAFDB2A0022FAEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85CFD4141AAFDB2A0022FAEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85CFD4131AAFDB2A0022FAEF /* guess-who.app */,
+				85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85CFD4151AAFDB2A0022FAEF /* guess-who */ = {
+			isa = PBXGroup;
+			children = (
+				85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */,
+				85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */,
+				85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */,
+				85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */,
+				85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */,
+				85CFD4161AAFDB2A0022FAEF /* Supporting Files */,
+			);
+			path = "guess-who";
+			sourceTree = "<group>";
+		};
+		85CFD4161AAFDB2A0022FAEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85CFD4171AAFDB2A0022FAEF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85CFD42B1AAFDB2B0022FAEF /* guess-whoTests */ = {
+			isa = PBXGroup;
+			children = (
+				85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */,
+				85CFD42C1AAFDB2B0022FAEF /* Supporting Files */,
+			);
+			path = "guess-whoTests";
+			sourceTree = "<group>";
+		};
+		85CFD42C1AAFDB2B0022FAEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				85CFD42D1AAFDB2B0022FAEF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85CFD4121AAFDB2A0022FAEF /* guess-who */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-who" */;
+			buildPhases = (
+				85CFD40F1AAFDB2A0022FAEF /* Sources */,
+				85CFD4101AAFDB2A0022FAEF /* Frameworks */,
+				85CFD4111AAFDB2A0022FAEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "guess-who";
+			productName = "guess-who";
+			productReference = 85CFD4131AAFDB2A0022FAEF /* guess-who.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85CFD4271AAFDB2B0022FAEF /* guess-whoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85CFD4351AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-whoTests" */;
+			buildPhases = (
+				85CFD4241AAFDB2B0022FAEF /* Sources */,
+				85CFD4251AAFDB2B0022FAEF /* Frameworks */,
+				85CFD4261AAFDB2B0022FAEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85CFD42A1AAFDB2B0022FAEF /* PBXTargetDependency */,
+			);
+			name = "guess-whoTests";
+			productName = "guess-whoTests";
+			productReference = 85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85CFD40B1AAFDB2A0022FAEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Paul Nichols";
+				TargetAttributes = {
+					85CFD4121AAFDB2A0022FAEF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					85CFD4271AAFDB2B0022FAEF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 85CFD4121AAFDB2A0022FAEF;
+					};
+				};
+			};
+			buildConfigurationList = 85CFD40E1AAFDB2A0022FAEF /* Build configuration list for PBXProject "guess-who" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85CFD40A1AAFDB2A0022FAEF;
+			productRefGroup = 85CFD4141AAFDB2A0022FAEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85CFD4121AAFDB2A0022FAEF /* guess-who */,
+				85CFD4271AAFDB2B0022FAEF /* guess-whoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85CFD4111AAFDB2A0022FAEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85CFD41E1AAFDB2A0022FAEF /* Main.storyboard in Resources */,
+				85CFD4231AAFDB2A0022FAEF /* LaunchScreen.xib in Resources */,
+				85CFD4201AAFDB2A0022FAEF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85CFD4261AAFDB2B0022FAEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85CFD40F1AAFDB2A0022FAEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */,
+				85CFD4191AAFDB2A0022FAEF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85CFD4241AAFDB2B0022FAEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85CFD42F1AAFDB2B0022FAEF /* guess_whoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85CFD42A1AAFDB2B0022FAEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85CFD4121AAFDB2A0022FAEF /* guess-who */;
+			targetProxy = 85CFD4291AAFDB2B0022FAEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85CFD41D1AAFDB2A0022FAEF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85CFD4221AAFDB2A0022FAEF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85CFD4301AAFDB2B0022FAEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85CFD4311AAFDB2B0022FAEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85CFD4331AAFDB2B0022FAEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "guess-who/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		85CFD4341AAFDB2B0022FAEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "guess-who/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		85CFD4361AAFDB2B0022FAEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "guess-whoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guess-who.app/guess-who";
+			};
+			name = Debug;
+		};
+		85CFD4371AAFDB2B0022FAEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "guess-whoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guess-who.app/guess-who";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85CFD40E1AAFDB2A0022FAEF /* Build configuration list for PBXProject "guess-who" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85CFD4301AAFDB2B0022FAEF /* Debug */,
+				85CFD4311AAFDB2B0022FAEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-who" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85CFD4331AAFDB2B0022FAEF /* Debug */,
+				85CFD4341AAFDB2B0022FAEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		85CFD4351AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-whoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85CFD4361AAFDB2B0022FAEF /* Debug */,
+				85CFD4371AAFDB2B0022FAEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85CFD40B1AAFDB2A0022FAEF /* Project object */;
+}
