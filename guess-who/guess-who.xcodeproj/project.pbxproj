@@ -13,6 +13,7 @@
 		85CFD4201AAFDB2A0022FAEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */; };
 		85CFD4231AAFDB2A0022FAEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */; };
 		85CFD42F1AAFDB2B0022FAEF /* guess_whoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */; };
+		85CFD4391AAFDB8A0022FAEF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFD4381AAFDB8A0022FAEF /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guess-whoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CFD42D1AAFDB2B0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guess_whoTests.swift; sourceTree = "<group>"; };
+		85CFD4381AAFDB8A0022FAEF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CFD4391AAFDB8A0022FAEF /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		85CFD40A1AAFDB2A0022FAEF = {
 			isa = PBXGroup;
 			children = (
+				85CFD4381AAFDB8A0022FAEF /* libsqlite3.dylib */,
 				85CFD4151AAFDB2A0022FAEF /* guess-who */,
 				85CFD42B1AAFDB2B0022FAEF /* guess-whoTests */,
 				85CFD4141AAFDB2A0022FAEF /* Products */,
@@ -161,6 +165,7 @@
 				TargetAttributes = {
 					85CFD4121AAFDB2A0022FAEF = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = VPW259HPQL;
 					};
 					85CFD4271AAFDB2B0022FAEF = {
 						CreatedOnToolsVersion = 6.1.1;

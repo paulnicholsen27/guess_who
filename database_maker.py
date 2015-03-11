@@ -1,4 +1,4 @@
-import MySQLdb as db
+import sqlite3
 import os
 import requests
 import re
@@ -64,21 +64,14 @@ def parse_member_link(session, url, cookies):
         picture = None
     return name, picture, email
 
-def create_or_open_db(db_file):
-    db_is_new = True #not os.path.exists(db_file)
-    con = db.connect("127.0.0.1", "root", "", "members")
+def create_or_open_db(db_filename):
+    db_is_new = True #not os.path.exists(db_filename)
+    con = sqlite3.connect(db_filename)
     cursor = con.cursor()
     if db_is_new:
-        sql = "USE members;"
-        cursor.execute(sql)
         sql = "DROP TABLE IF EXISTS member_data;"
         cursor.execute(sql)
-        sql = '''CREATE TABLE member_data (
-            id INTEGER PRIMARY KEY AUTO_INCREMENT,
-            picture BLOB,
-            name TEXT,
-            email TEXT,
-            link TEXT);'''
+        sql = '''CREATE TABLE member_data(id integer primary key autoincrement, picture BLOB, name TEXT, email TEXT, link TEXT);'''
         cursor.execute(sql)
     else:
         print 'Schema exists\n'
@@ -95,7 +88,7 @@ def insert_into_db(con, photo, member_name, email, link):
         errors.append((photo, member_name, email, link))
 
 def main():
-    db_filename = "chorus.sql"
+    db_filename = "members.sqlite3"
     con = create_or_open_db(db_filename)
     cur = con.cursor()
     session = requests.session()
@@ -111,6 +104,7 @@ def main():
     sql = '''select * from member_data'''
     cur.execute(sql)
     rows = cur.fetchall()
+    for row in rows[:10]: print row
     con.close()
     if errors: print errors
 
