@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
 
@@ -20,64 +21,72 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdChoice: UIButton!
     @IBOutlet weak var fourthChoice: UIButton!
     
+    
+    @IBAction func guessChosen(sender: AnyObject) {
+        checkAnswer(sender)
+    }
 
-    @IBAction func firstButtonPressed(sender: AnyObject) {
-    }
-    
-    
-    @IBAction func secondButtonPressed(sender: AnyObject) {
-    }
-    
-    
-    @IBAction func thirdButtonPressed(sender: AnyObject) {
-    }
-    
-    @IBAction func fourthButtonPressed(sender: AnyObject) {
-        
-    }
-    
-    let memberDatabase = FMDatabase(path: "/Users/paulnichols/Documents/code/gmcw/guess_who/members.sqlite3")
-    let rightAnswer:FMResultSet?
+    var rightAnswer:FMResultSet?
+    var databasePath:String?
+    var correctName:String?
+    var memberDatabase:FMDatabase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
+        memberDatabase = FMDatabase(path: path)
         if memberDatabase == nil {
             println("error finding database")
         } else {
-            if memberDatabase.open(){
+            if memberDatabase!.open(){
                 println("database is ready")
             }
         }
-//        let results:FMResultSet? = memberDatabase.executeQuery("select count(*) as numrows from member_data where picture is not 'None'", withArgumentsInArray: [])
-//        results?.next()
-//        let numMembers = results?.intForColumn("numrows")
-//        println(numMembers!)
-        
-//        let querySQL = "SELECT name, picture from member_data where picture is not 'None'";
-//        let membersWithPhotos:FMResultSet = memberDatabase.executeQuery(querySQL, withArgumentsInArray: nil)
-//        membersWithPhotos.next()
-        
-        
+
         displayRandomMember()
         //close database?
         
     }
     
     func displayRandomMember(){
-        let querySQL = "SELECT name, picture from member_data where picture is not 'None' ORDER BY RANDOM() LIMIT 1";
-        let rightAnswer:FMResultSet = memberDatabase.executeQuery(querySQL, withArgumentsInArray: nil)
-        rightAnswer.next()
-        let correctName = rightAnswer.stringForColumn("name")
-        let correctPicture = rightAnswer.stringForColumn("picture")
-        println(correctName)
-        let wrongAnswerSQLQuery = "SELECT name from member_data where picture is not 'None' and name is not '\(correctName)' ORDER BY RANDOM() LIMIT 3"
-        println(wrongAnswerSQLQuery)
-        let wrongAnswers:FMResultSet = memberDatabase.executeQuery(wrongAnswerSQLQuery, withArgumentsInArray: nil)
-        while wrongAnswers.next() == true {
-            println(wrongAnswers.stringForColumn("name"))
+        println(databasePath)
+        if memberDatabase!.open(){
+            println("database is really ready")
         }
+        let querySQL = "SELECT name, picture_name from member_data where picture_name is not 'None' ORDER BY RANDOM() LIMIT 1";
+        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: nil)
+        rightAnswer!.next()
+        var correctName = rightAnswer!.stringForColumn("name")!
+        let correctPicture = rightAnswer!.stringForColumn("picture_name")
+        println("Correct answer is \(correctName)")
+        let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not 'None' and name is not '\(correctName)' ORDER BY RANDOM() LIMIT 3"
+        let wrongAnswersResultSet:FMResultSet = memberDatabase!.executeQuery(wrongAnswerSQLQuery, withArgumentsInArray: nil)
+        var wrongAnswersArray:[String] = []
+        while wrongAnswersResultSet.next() == true {
+            wrongAnswersArray.append(wrongAnswersResultSet.stringForColumn("name"))
+        }
+        var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
+        var correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
+        correctButton.setTitle(correctName, forState: .Normal)
+        for i in 0..<wrongButtons.count{
+            wrongButtons[i].setTitle(wrongAnswersArray[i], forState: .Normal)
+        }
+
+        memberPic.image = UIImage(named: correctPicture)
         return
+    }
+    
+    func checkAnswer(sender:AnyObject) -> Bool{
+        let selectedAnswer = sender.currentTitle!
+
+        if selectedAnswer! == correctName! {
+            println("Correct!")
+            return true}
+        else{
+            println("Incorrect!")
+            return false
+        }
     }
 
     override func didReceiveMemoryWarning() {
