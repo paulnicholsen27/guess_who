@@ -16,8 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd9-XW-4Cz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd9-XW-4Cz">
                                 <rect key="frame" x="150" y="380" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5dL-hh-FLa"/>
+                                    <constraint firstAttribute="height" constant="30" id="Mw7-Fw-esI"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +29,12 @@
                                     <action selector="guessChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GUN-IV-2JG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpj-B0-B0l">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpj-B0-B0l">
                                 <rect key="frame" x="150" y="418" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gIG-aF-2bN"/>
+                                    <constraint firstAttribute="width" constant="300" id="mxX-Lc-Jjk"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,11 +54,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
-                                <rect key="frame" x="180" y="138" width="180" height="180"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bii-1N-KWV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bii-1N-KWV">
                                 <rect key="frame" x="150" y="342" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4e0-Im-rcw"/>
+                                    <constraint firstAttribute="width" constant="300" id="VuZ-sh-bkh"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -58,8 +67,12 @@
                                     <action selector="guessChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z5J-RI-YlT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-oM-BUQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-oM-BUQ">
                                 <rect key="frame" x="150" y="456" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pKO-64-Hed"/>
+                                    <constraint firstAttribute="width" constant="300" id="qpw-EC-vzS"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,8 +80,27 @@
                                     <action selector="guessChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjH-Ry-nQ8"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
+                                <rect key="frame" x="180" y="138" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
+                                    <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bii-1N-KWV" firstAttribute="top" secondItem="9vU-6a-8XZ" secondAttribute="bottom" constant="79" id="9Fu-f3-487"/>
+                            <constraint firstItem="9vU-6a-8XZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="Fz7-o8-e60"/>
+                            <constraint firstAttribute="centerX" secondItem="9vU-6a-8XZ" secondAttribute="centerX" id="NFu-g6-PhV"/>
+                            <constraint firstAttribute="centerX" secondItem="Rd9-XW-4Cz" secondAttribute="centerX" id="beQ-r0-0k1"/>
+                            <constraint firstItem="Tpj-B0-B0l" firstAttribute="top" secondItem="Rd9-XW-4Cz" secondAttribute="bottom" constant="8" id="fbN-0u-XcN"/>
+                            <constraint firstAttribute="centerX" secondItem="Gy2-oM-BUQ" secondAttribute="centerX" id="jU1-Sc-RXB"/>
+                            <constraint firstItem="Rd9-XW-4Cz" firstAttribute="top" secondItem="Bii-1N-KWV" secondAttribute="bottom" constant="8" id="q9N-eh-CP8"/>
+                            <constraint firstAttribute="centerX" secondItem="Bii-1N-KWV" secondAttribute="centerX" id="tgu-jU-XrA"/>
+                            <constraint firstItem="Gy2-oM-BUQ" firstAttribute="top" secondItem="Tpj-B0-B0l" secondAttribute="bottom" constant="8" id="ugk-Sn-6j4"/>
+                            <constraint firstAttribute="centerX" secondItem="Tpj-B0-B0l" secondAttribute="centerX" id="viK-IU-kIe"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="firstChoice" destination="Bii-1N-KWV" id="JnW-Ud-vwj"/>

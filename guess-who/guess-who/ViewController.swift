@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let querySQL = "SELECT name, picture_name from member_data where picture_name is not 'None' ORDER BY RANDOM() LIMIT 1";
         rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: nil)
         rightAnswer!.next()
-        var correctName = rightAnswer!.stringForColumn("name")!
+        correctName = rightAnswer!.stringForColumn("name")!
         let correctPicture = rightAnswer!.stringForColumn("picture_name")
         println("Correct answer is \(correctName)")
         let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not 'None' and name is not '\(correctName)' ORDER BY RANDOM() LIMIT 3"
@@ -79,7 +79,6 @@ class ViewController: UIViewController {
     
     func checkAnswer(sender:AnyObject) -> Bool{
         let selectedAnswer = sender.currentTitle!
-
         if selectedAnswer! == correctName! {
             println("Correct!")
             return true}
