@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85247FB31ACCDE43009FCBA4 /* yellow_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB21ACCDE43009FCBA4 /* yellow_button.png */; };
+		85247FB51ACCE021009FCBA4 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB41ACCE021009FCBA4 /* green_button.png */; };
+		85247FB71ACCE030009FCBA4 /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB61ACCE030009FCBA4 /* red_button.png */; };
 		852E98B81AC2454F00116882 /* A.J. Rawls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B21AC2454E00116882 /* A.J. Rawls.jpg */; };
 		852E98B91AC2454F00116882 /* Aaron Wallace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B31AC2454E00116882 /* Aaron Wallace.jpg */; };
 		852E98BA1AC2454F00116882 /* Adrian Gonzalez.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B41AC2454E00116882 /* Adrian Gonzalez.jpg */; };
@@ -296,6 +299,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		85247FB21ACCDE43009FCBA4 /* yellow_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_button.png; sourceTree = "<group>"; };
+		85247FB41ACCE021009FCBA4 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
+		85247FB61ACCE030009FCBA4 /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
 		852E97B21AC2454E00116882 /* A.J. Rawls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "A.J. Rawls.jpg"; sourceTree = "<group>"; };
 		852E97B31AC2454E00116882 /* Aaron Wallace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Aaron Wallace.jpg"; sourceTree = "<group>"; };
 		852E97B41AC2454E00116882 /* Adrian Gonzalez.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Adrian Gonzalez.jpg"; sourceTree = "<group>"; };
@@ -604,6 +610,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85247FB11ACCDE25009FCBA4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				85247FB61ACCE030009FCBA4 /* red_button.png */,
+				85247FB41ACCE021009FCBA4 /* green_button.png */,
+				85247FB21ACCDE43009FCBA4 /* yellow_button.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		852E97B11AC2454E00116882 /* chorus members */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +936,7 @@
 		85CFD4161AAFDB2A0022FAEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				85247FB11ACCDE25009FCBA4 /* images */,
 				85AD9D251AC4C4AB00D599CE /* members.sqlite3 */,
 				852E97B11AC2454E00116882 /* chorus members */,
 				85F6A79E1AB91A51007EA30C /* cat.jpg */,
@@ -1028,6 +1045,7 @@
 			files = (
 				852E99151AC2454F00116882 /* James Roth.jpg in Resources */,
 				852E998A1AC2454F00116882 /* Ricky Junquera.jpg in Resources */,
+				85247FB51ACCE021009FCBA4 /* green_button.png in Resources */,
 				852E99331AC2454F00116882 /* John Quinones.jpg in Resources */,
 				852E99341AC2454F00116882 /* John Santell.jpg in Resources */,
 				852E995A1AC2454F00116882 /* Mark Paist.jpg in Resources */,
@@ -1113,6 +1131,7 @@
 				852E98BB1AC2454F00116882 /* Alex Ford.jpg in Resources */,
 				852E99491AC2454F00116882 /* Kip Jacobs.jpg in Resources */,
 				852E98C51AC2454F00116882 /* Bill Cutter.jpg in Resources */,
+				85247FB71ACCE030009FCBA4 /* red_button.png in Resources */,
 				852E99501AC2454F00116882 /* Kyle Holland.jpg in Resources */,
 				852E99361AC2454F00116882 /* John-Paul Hayworth.jpg in Resources */,
 				852E98C71AC2454F00116882 /* Bill Robinson.jpg in Resources */,
@@ -1163,6 +1182,7 @@
 				852E99641AC2454F00116882 /* Matthew Williamson.jpg in Resources */,
 				852E98C11AC2454F00116882 /* Artemio Rivera.jpg in Resources */,
 				852E99441AC2454F00116882 /* Kevin Hall.jpg in Resources */,
+				85247FB31ACCDE43009FCBA4 /* yellow_button.png in Resources */,
 				852E99791AC2454F00116882 /* Paul Kelsch.jpg in Resources */,
 				852E991C1AC2454F00116882 /* Jason Peeples.jpg in Resources */,
 				852E99771AC2454F00116882 /* Paul Emanuel Voorhees.jpg in Resources */,

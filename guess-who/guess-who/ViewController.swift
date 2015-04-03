@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondChoice: UIButton!
     @IBOutlet weak var thirdChoice: UIButton!
     @IBOutlet weak var fourthChoice: UIButton!
-    
+    @IBOutlet var choiceButtons: Array<UIButton>?
     
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
@@ -29,7 +29,11 @@ class ViewController: UIViewController {
     var rightAnswer:FMResultSet?
     var databasePath:String?
     var correctName:String?
+    var correctButton:UIButton?
     var memberDatabase:FMDatabase?
+    let red_button = UIImage(named: "red_button") as UIImage?
+    let green_button = UIImage(named: "green_button") as UIImage?
+    let yellow_button = UIImage(named: "yellow_button") as UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +54,10 @@ class ViewController: UIViewController {
     }
     
     func displayRandomMember(){
-        println(databasePath)
+        for button in choiceButtons! {
+            button.setBackgroundImage(yellow_button, forState: .Normal)
+            button.userInteractionEnabled = true
+        }
         if memberDatabase!.open(){
             println("database is really ready")
         }
@@ -67,8 +74,8 @@ class ViewController: UIViewController {
             wrongAnswersArray.append(wrongAnswersResultSet.stringForColumn("name"))
         }
         var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
-        var correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
-        correctButton.setTitle(correctName, forState: .Normal)
+        correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
+        correctButton!.setTitle(correctName, forState: .Normal)
         for i in 0..<wrongButtons.count{
             wrongButtons[i].setTitle(wrongAnswersArray[i], forState: .Normal)
         }
@@ -79,11 +86,17 @@ class ViewController: UIViewController {
     
     func checkAnswer(sender:AnyObject) -> Bool{
         let selectedAnswer = sender.currentTitle!
+        for button in choiceButtons! {
+            button.userInteractionEnabled = false
+        }
+        correctButton!.setBackgroundImage(green_button, forState: .Normal)
+        
         if selectedAnswer! == correctName! {
             println("Correct!")
             return true}
         else{
             println("Incorrect!")
+            sender.setBackgroundImage(red_button, forState: .Normal)
             return false
         }
     }
