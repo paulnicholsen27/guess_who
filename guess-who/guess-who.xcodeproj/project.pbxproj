@@ -10,6 +10,7 @@
 		85247FB31ACCDE43009FCBA4 /* yellow_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB21ACCDE43009FCBA4 /* yellow_button.png */; };
 		85247FB51ACCE021009FCBA4 /* green_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB41ACCE021009FCBA4 /* green_button.png */; };
 		85247FB71ACCE030009FCBA4 /* red_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85247FB61ACCE030009FCBA4 /* red_button.png */; };
+		852A86691ACF7AEE000EC7F5 /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 852A86681ACF7AEE000EC7F5 /* blue_button.png */; };
 		852E98B81AC2454F00116882 /* A.J. Rawls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B21AC2454E00116882 /* A.J. Rawls.jpg */; };
 		852E98B91AC2454F00116882 /* Aaron Wallace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B31AC2454E00116882 /* Aaron Wallace.jpg */; };
 		852E98BA1AC2454F00116882 /* Adrian Gonzalez.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E97B41AC2454E00116882 /* Adrian Gonzalez.jpg */; };
@@ -273,6 +274,8 @@
 		852E99BC1AC2454F00116882 /* William Trokey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E98B61AC2454F00116882 /* William Trokey.jpg */; };
 		852E99BD1AC2454F00116882 /* Zachary Powell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852E98B71AC2454F00116882 /* Zachary Powell.jpg */; };
 		85AD9D261AC4C4AB00D599CE /* members.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 85AD9D251AC4C4AB00D599CE /* members.sqlite3 */; };
+		85CE4CF11ACF83520068CD45 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 85CE4CF01ACF83520068CD45 /* background.jpeg */; };
+		85CE4CF31ACF87E60068CD45 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 85CE4CF21ACF87E60068CD45 /* frame.png */; };
 		85CFD4191AAFDB2A0022FAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */; };
 		85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */; };
 		85CFD41E1AAFDB2A0022FAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */; };
@@ -285,6 +288,8 @@
 		85CFD4481AAFE1A40022FAEF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4411AAFE1A40022FAEF /* FMDatabaseQueue.m */; };
 		85CFD4491AAFE1A40022FAEF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4431AAFE1A40022FAEF /* FMDatabaseAdditions.m */; };
 		85CFD44A1AAFE1A40022FAEF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4451AAFE1A40022FAEF /* FMDatabasePool.m */; };
+		85DDEF531AD4C34B001EAA6A /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDEF521AD4C34B001EAA6A /* LandingViewController.swift */; };
+		85DDEF551AD61383001EAA6A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDEF541AD61383001EAA6A /* AboutViewController.swift */; };
 		85F6A79F1AB91A51007EA30C /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85F6A79E1AB91A51007EA30C /* cat.jpg */; };
 /* End PBXBuildFile section */
 
@@ -302,6 +307,7 @@
 		85247FB21ACCDE43009FCBA4 /* yellow_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow_button.png; sourceTree = "<group>"; };
 		85247FB41ACCE021009FCBA4 /* green_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_button.png; sourceTree = "<group>"; };
 		85247FB61ACCE030009FCBA4 /* red_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_button.png; sourceTree = "<group>"; };
+		852A86681ACF7AEE000EC7F5 /* blue_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button.png; sourceTree = "<group>"; };
 		852E97B21AC2454E00116882 /* A.J. Rawls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "A.J. Rawls.jpg"; sourceTree = "<group>"; };
 		852E97B31AC2454E00116882 /* Aaron Wallace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Aaron Wallace.jpg"; sourceTree = "<group>"; };
 		852E97B41AC2454E00116882 /* Adrian Gonzalez.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Adrian Gonzalez.jpg"; sourceTree = "<group>"; };
@@ -565,6 +571,8 @@
 		852E98B61AC2454F00116882 /* William Trokey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "William Trokey.jpg"; sourceTree = "<group>"; };
 		852E98B71AC2454F00116882 /* Zachary Powell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Zachary Powell.jpg"; sourceTree = "<group>"; };
 		85AD9D251AC4C4AB00D599CE /* members.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = members.sqlite3; sourceTree = "<group>"; };
+		85CE4CF01ACF83520068CD45 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
+		85CE4CF21ACF87E60068CD45 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		85CFD4131AAFDB2A0022FAEF /* guess-who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guess-who.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CFD4171AAFDB2A0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -588,6 +596,8 @@
 		85CFD4431AAFE1A40022FAEF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = ../fmdb/src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		85CFD4441AAFE1A40022FAEF /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = ../fmdb/src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
 		85CFD4451AAFE1A40022FAEF /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = ../fmdb/src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		85DDEF521AD4C34B001EAA6A /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		85DDEF541AD61383001EAA6A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		85F6A79E1AB91A51007EA30C /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -613,6 +623,8 @@
 		85247FB11ACCDE25009FCBA4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				85CE4CF21ACF87E60068CD45 /* frame.png */,
+				852A86681ACF7AEE000EC7F5 /* blue_button.png */,
 				85247FB61ACCE030009FCBA4 /* red_button.png */,
 				85247FB41ACCE021009FCBA4 /* green_button.png */,
 				85247FB21ACCDE43009FCBA4 /* yellow_button.png */,
@@ -925,10 +937,12 @@
 				85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */,
 				85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */,
 				85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */,
+				85DDEF521AD4C34B001EAA6A /* LandingViewController.swift */,
 				85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */,
 				85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */,
 				85CFD4161AAFDB2A0022FAEF /* Supporting Files */,
 				85CFD43A1AAFE1A30022FAEF /* guess-who-Bridging-Header.h */,
+				85DDEF541AD61383001EAA6A /* AboutViewController.swift */,
 			);
 			path = "guess-who";
 			sourceTree = "<group>";
@@ -936,6 +950,7 @@
 		85CFD4161AAFDB2A0022FAEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				85CE4CF01ACF83520068CD45 /* background.jpeg */,
 				85247FB11ACCDE25009FCBA4 /* images */,
 				85AD9D251AC4C4AB00D599CE /* members.sqlite3 */,
 				852E97B11AC2454E00116882 /* chorus members */,
@@ -1046,6 +1061,7 @@
 				852E99151AC2454F00116882 /* James Roth.jpg in Resources */,
 				852E998A1AC2454F00116882 /* Ricky Junquera.jpg in Resources */,
 				85247FB51ACCE021009FCBA4 /* green_button.png in Resources */,
+				85CE4CF11ACF83520068CD45 /* background.jpeg in Resources */,
 				852E99331AC2454F00116882 /* John Quinones.jpg in Resources */,
 				852E99341AC2454F00116882 /* John Santell.jpg in Resources */,
 				852E995A1AC2454F00116882 /* Mark Paist.jpg in Resources */,
@@ -1179,6 +1195,7 @@
 				852E99691AC2454F00116882 /* Michael Hughes.jpg in Resources */,
 				852E99761AC2454F00116882 /* Patrick Nelson.jpg in Resources */,
 				852E98B81AC2454F00116882 /* A.J. Rawls.jpg in Resources */,
+				85CE4CF31ACF87E60068CD45 /* frame.png in Resources */,
 				852E99641AC2454F00116882 /* Matthew Williamson.jpg in Resources */,
 				852E98C11AC2454F00116882 /* Artemio Rivera.jpg in Resources */,
 				852E99441AC2454F00116882 /* Kevin Hall.jpg in Resources */,
@@ -1232,6 +1249,7 @@
 				852E98D71AC2454F00116882 /* Chase Maggiano.jpg in Resources */,
 				852E99841AC2454F00116882 /* Raymond Rinaldo.jpg in Resources */,
 				852E99A71AC2454F00116882 /* Steve Herman.jpg in Resources */,
+				852A86691ACF7AEE000EC7F5 /* blue_button.png in Resources */,
 				852E99421AC2454F00116882 /* Kenneth Hewitt.jpg in Resources */,
 				852E99351AC2454F00116882 /* John Schwanke.jpg in Resources */,
 				852E99891AC2454F00116882 /* Rick Knight.jpg in Resources */,
@@ -1332,6 +1350,8 @@
 			files = (
 				85CFD4481AAFE1A40022FAEF /* FMDatabaseQueue.m in Sources */,
 				85CFD4461AAFE1A40022FAEF /* FMDatabase.m in Sources */,
+				85DDEF531AD4C34B001EAA6A /* LandingViewController.swift in Sources */,
+				85DDEF551AD61383001EAA6A /* AboutViewController.swift in Sources */,
 				85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */,
 				85CFD4471AAFE1A40022FAEF /* FMResultSet.m in Sources */,
 				85CFD44A1AAFE1A40022FAEF /* FMDatabasePool.m in Sources */,

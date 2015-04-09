@@ -51,20 +51,29 @@ def get_member_data(session, cookies):
         member_name = li.find("span", {"class" : "member-name"}).span.string
         member_name = reverse_name(member_name)
         picture_url = li.find("img", typeof="foaf:Image")["src"]
-        picture_name = get_picture(session, cookies, picture_url, member_name)
+        picture_name = picture_parser(picture_url)
+        # picture_name = get_picture(session, cookies, picture_url, member_name)
         link = li.find("a")["href"]
         members.append((member_name, picture_name, link))
     return members
 
-def get_picture(session, cookies, picture_url, member_name):
-    if "default_user" not in picture_url:
-        file_name = "{}.jpg".format(member_name.encode('utf-8'))
-        path = "/Users/paulnichols/Desktop/chorus members/{}".format(file_name)
-        with open(path, "wb") as f:
-            f.write(urllib.urlopen(picture_url).read())
+
+def picture_parser(path):
+    if "default_user" in path:
+        return None
     else:
-        file_name = "None"
-    return file_name
+        filename = path.split("/")[-1]
+        return filename[:filename.find("?")]
+
+# def get_picture(session, cookies, picture_url, member_name):
+#     if "default_user" not in picture_url:
+#         file_name = "{}.jpg".format(member_name.encode('utf-8'))
+#         path = "/Users/paulnichols/Desktop/chorus members/{}".format(file_name)
+#         with open(path, "wb") as f:
+#             f.write(urllib.urlopen(picture_url).read())
+#     else:
+#         file_name = "None"
+#     return file_name
 
 def create_or_open_db(db_filename):
     db_is_new = True #not os.path.exists(db_filename)

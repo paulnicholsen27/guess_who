@@ -11,7 +11,6 @@ import Foundation
 
 class ViewController: UIViewController {
 
-
     @IBOutlet weak var memberPic: UIImageView!
     
     @IBOutlet weak var score: UILabel!
@@ -26,6 +25,12 @@ class ViewController: UIViewController {
         checkAnswer(sender)
     }
 
+    @IBOutlet weak var playAgainButton: UIButton!
+    
+    @IBAction func playAgainPressed(sender: AnyObject) {
+        displayRandomMember()
+    }
+    
     var rightAnswer:FMResultSet?
     var databasePath:String?
     var correctName:String?
@@ -34,10 +39,11 @@ class ViewController: UIViewController {
     let red_button = UIImage(named: "red_button") as UIImage?
     let green_button = UIImage(named: "green_button") as UIImage?
     let yellow_button = UIImage(named: "yellow_button") as UIImage?
+    var scoreCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpeg")!)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         memberDatabase = FMDatabase(path: path)
         if memberDatabase == nil {
@@ -47,19 +53,17 @@ class ViewController: UIViewController {
                 println("database is ready")
             }
         }
-
+        score.text = "\(scoreCount)"
         displayRandomMember()
         //close database?
         
     }
     
     func displayRandomMember(){
+        playAgainButton.userInteractionEnabled = false
         for button in choiceButtons! {
             button.setBackgroundImage(yellow_button, forState: .Normal)
             button.userInteractionEnabled = true
-        }
-        if memberDatabase!.open(){
-            println("database is really ready")
         }
         let querySQL = "SELECT name, picture_name from member_data where picture_name is not 'None' ORDER BY RANDOM() LIMIT 1";
         rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: nil)
@@ -90,12 +94,12 @@ class ViewController: UIViewController {
             button.userInteractionEnabled = false
         }
         correctButton!.setBackgroundImage(green_button, forState: .Normal)
-        
+        playAgainButton.userInteractionEnabled = true
         if selectedAnswer! == correctName! {
-            println("Correct!")
-            return true}
-        else{
-            println("Incorrect!")
+            scoreCount += 10
+            score.text = "\(scoreCount)"
+            return true
+        } else {
             sender.setBackgroundImage(red_button, forState: .Normal)
             return false
         }
