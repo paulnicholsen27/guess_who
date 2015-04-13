@@ -25,22 +25,18 @@ class ViewController: UIViewController {
         checkAnswer(sender)
     }
 
-    @IBOutlet weak var playAgainButton: UIButton!
-    
-    @IBAction func playAgainPressed(sender: AnyObject) {
-        displayRandomMember()
-    }
-    
     var rightAnswer:FMResultSet?
     var databasePath:String?
     var correctName:String?
     var correctButton:UIButton?
     var memberDatabase:FMDatabase?
-    let red_button = UIImage(named: "red_button") as UIImage?
-    let green_button = UIImage(named: "green_button") as UIImage?
-    let yellow_button = UIImage(named: "yellow_button") as UIImage?
+    let redButton = UIImage(named: "red_button") as UIImage?
+    let greenButton = UIImage(named: "green_button") as UIImage?
+    let yellowButton = UIImage(named: "yellow_button") as UIImage?
     var scoreCount = 0
-    
+    var correctRun = 0
+    var turnCount = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpeg")!)
@@ -60,9 +56,8 @@ class ViewController: UIViewController {
     }
     
     func displayRandomMember(){
-        playAgainButton.userInteractionEnabled = false
         for button in choiceButtons! {
-            button.setBackgroundImage(yellow_button, forState: .Normal)
+            button.setBackgroundImage(yellowButton, forState: .Normal)
             button.userInteractionEnabled = true
         }
         let querySQL = "SELECT name, picture_name from member_data where picture_name is not 'None' ORDER BY RANDOM() LIMIT 1";
@@ -88,21 +83,28 @@ class ViewController: UIViewController {
         return
     }
     
-    func checkAnswer(sender:AnyObject) -> Bool{
+    func checkAnswer(sender:AnyObject){
         let selectedAnswer = sender.currentTitle!
         for button in choiceButtons! {
             button.userInteractionEnabled = false
         }
-        correctButton!.setBackgroundImage(green_button, forState: .Normal)
-        playAgainButton.userInteractionEnabled = true
+        correctButton!.setBackgroundImage(greenButton, forState: .Normal)
         if selectedAnswer! == correctName! {
-            scoreCount += 10
+            correctRun += 1
+            scoreCount += (100 * correctRun)
             score.text = "\(scoreCount)"
-            return true
+            println(score)
         } else {
-            sender.setBackgroundImage(red_button, forState: .Normal)
-            return false
+            sender.setBackgroundImage(redButton, forState: .Normal)
+            correctRun = 0
         }
+        turnCount += 1
+        if turnCount < 10 {
+            displayRandomMember()
+        } else {
+            println("game over")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
