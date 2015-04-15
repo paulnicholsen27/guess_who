@@ -10,10 +10,17 @@ import UIKit
 
 class LandingViewController: UIViewController {
 
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println("you are here")
-        // Do any additional setup after loading the view.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let highScore = defaults.stringForKey("highScore") {
+            highScoreLabel.text = "\(highScore)"
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

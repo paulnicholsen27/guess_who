@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var memberPic: UIImageView!
     
-    @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     let redButton = UIImage(named: "red_button") as UIImage?
     let greenButton = UIImage(named: "green_button") as UIImage?
     let yellowButton = UIImage(named: "yellow_button") as UIImage?
-    var scoreCount = 0
+    var score = 0
     var correctRun = 0
     var turnCount = 0
 
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 println("database is ready")
             }
         }
-        score.text = "\(scoreCount)"
+        scoreLabel.text = "\(score)"
         displayRandomMember()
         //close database?
         
@@ -91,9 +91,9 @@ class ViewController: UIViewController {
         correctButton!.setBackgroundImage(greenButton, forState: .Normal)
         if selectedAnswer! == correctName! {
             correctRun += 1
-            scoreCount += (100 * correctRun)
-            score.text = "\(scoreCount)"
-            println(score)
+            score += (100 * correctRun)
+            scoreLabel.text = "\(score)"
+            println(scoreLabel)
         } else {
             sender.setBackgroundImage(redButton, forState: .Normal)
             correctRun = 0
@@ -102,11 +102,21 @@ class ViewController: UIViewController {
         if turnCount < 10 {
             displayRandomMember()
         } else {
+            checkHighScore()
             println("game over")
         }
         
     }
 
+    func checkHighScore(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var oldHighScore = defaults.integerForKey("highScore")
+        if (score > oldHighScore) {
+            println("Your old High Score was \(oldHighScore)")
+            println("your new high score is \(score)")
+            defaults.setInteger(score, forKey: "highScore")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

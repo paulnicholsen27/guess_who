@@ -249,7 +249,7 @@
                         <outlet property="firstChoice" destination="Bii-1N-KWV" id="JnW-Ud-vwj"/>
                         <outlet property="fourthChoice" destination="Gy2-oM-BUQ" id="rdw-Vx-5ga"/>
                         <outlet property="memberPic" destination="9vU-6a-8XZ" id="sYO-s6-7Fc"/>
-                        <outlet property="score" destination="91p-tk-XA7" id="Uqb-vD-AJO"/>
+                        <outlet property="scoreLabel" destination="91p-tk-XA7" id="6hF-Zv-fdO"/>
                         <outlet property="secondChoice" destination="Rd9-XW-4Cz" id="99Y-qd-e8f"/>
                         <outlet property="thirdChoice" destination="Tpj-B0-B0l" id="G5F-VA-LoS"/>
                         <outletCollection property="choiceButtons" destination="Bii-1N-KWV" collectionClass="NSMutableArray" id="CQl-Ap-Ulc"/>
@@ -300,9 +300,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
+                                <rect key="frame" x="217" y="242" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
+                                <rect key="frame" x="316" y="242" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="PYJ-m5-gUq" id="8Ce-tM-esA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2g-xt-pc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
