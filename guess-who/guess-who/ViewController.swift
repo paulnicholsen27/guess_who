@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fourthChoice: UIButton!
     @IBOutlet var choiceButtons: Array<UIButton>?
     
+    @IBOutlet weak var playAgainButton: UIButton!
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
@@ -37,10 +38,15 @@ class ViewController: UIViewController {
     var correctRun = 0
     var turnCount = 0
 
+    @IBAction func playAgainPressed(sender: AnyObject) {
+        resetGame()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpeg")!)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
+        playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)
         if memberDatabase == nil {
             println("error finding database")
@@ -50,8 +56,18 @@ class ViewController: UIViewController {
             }
         }
         scoreLabel.text = "\(score)"
-        displayRandomMember()
+        resetGame()
         //close database?
+        
+    }
+    
+    func resetGame(){
+        score = 0
+        turnCount = 0
+        correctRun = 0
+        playAgainButton.hidden = true
+
+        displayRandomMember()
         
     }
     
@@ -106,6 +122,7 @@ class ViewController: UIViewController {
                 self.displayRandomMember()
             } else {
                 self.checkHighScore()
+                self.playAgainButton.hidden = false
                 println("game over")
             }
         }

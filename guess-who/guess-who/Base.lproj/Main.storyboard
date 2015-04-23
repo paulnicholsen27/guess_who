@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -59,21 +59,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
-                                <rect key="frame" x="238" y="138" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="AOw-tj-lCZ"/>
-                                    <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
-                                    <constraint firstAttribute="width" constant="150" id="ghL-pB-INq"/>
-                                    <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LTy-Cy-VWq"/>
-                                        <exclude reference="tTm-hB-GDy"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91p-tk-XA7">
                                 <rect key="frame" x="492" y="89" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,8 +70,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="0dY-PD-Q2K"/>
                                     <constraint firstAttribute="height" constant="135" id="IpO-MF-XFm"/>
-                                    <constraint firstAttribute="height" constant="150" id="L6B-1D-EjW"/>
-                                    <constraint firstAttribute="width" constant="150" id="joD-ip-dXb"/>
+                                    <constraint firstAttribute="height" constant="160" id="L6B-1D-EjW"/>
+                                    <constraint firstAttribute="width" constant="160" id="joD-ip-dXb"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -180,6 +165,30 @@
                                     <action selector="guessChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2y-uu-vPi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-hZ-KBk">
+                                <rect key="frame" x="175" y="411" width="83" height="83"/>
+                                <state key="normal" image="blue_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfD-aB-rJb"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
+                                <rect key="frame" x="238" y="138" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AOw-tj-lCZ"/>
+                                    <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
+                                    <constraint firstAttribute="width" constant="150" id="ghL-pB-INq"/>
+                                    <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LTy-Cy-VWq"/>
+                                        <exclude reference="tTm-hB-GDy"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -249,6 +258,7 @@
                         <outlet property="firstChoice" destination="Bii-1N-KWV" id="JnW-Ud-vwj"/>
                         <outlet property="fourthChoice" destination="Gy2-oM-BUQ" id="rdw-Vx-5ga"/>
                         <outlet property="memberPic" destination="9vU-6a-8XZ" id="sYO-s6-7Fc"/>
+                        <outlet property="playAgainButton" destination="z1L-hZ-KBk" id="RsW-m9-MQb"/>
                         <outlet property="scoreLabel" destination="91p-tk-XA7" id="6hF-Zv-fdO"/>
                         <outlet property="secondChoice" destination="Rd9-XW-4Cz" id="99Y-qd-e8f"/>
                         <outlet property="thirdChoice" destination="Tpj-B0-B0l" id="G5F-VA-LoS"/>
@@ -325,6 +335,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blue_button.png" width="83" height="83"/>
         <image name="cat.jpg" width="1536" height="1536"/>
         <image name="frame.png" width="900" height="900"/>
         <image name="yellow_button.png" width="290" height="45"/>
