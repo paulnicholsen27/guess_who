@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
-                                <rect key="frame" x="27" y="111" width="1028" height="360"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
+                                <rect key="frame" x="26" y="112" width="544" height="360"/>
                                 <string key="text">I'm Paul Nicholsen, a Baritone with the GMCW since January 2015.  I built this app to learn how to build apps (this is my first one, yay)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,6 +59,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
+                                <rect key="frame" x="238" y="138" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="AOw-tj-lCZ"/>
+                                    <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
+                                    <constraint firstAttribute="width" constant="150" id="ghL-pB-INq"/>
+                                    <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LTy-Cy-VWq"/>
+                                        <exclude reference="tTm-hB-GDy"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91p-tk-XA7">
                                 <rect key="frame" x="492" y="89" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -66,12 +81,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="OmP-4f-HTO">
-                                <rect key="frame" x="180" y="184" width="240" height="128"/>
+                                <rect key="frame" x="180" y="184" width="129" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="0dY-PD-Q2K"/>
                                     <constraint firstAttribute="height" constant="135" id="IpO-MF-XFm"/>
-                                    <constraint firstAttribute="height" constant="160" id="L6B-1D-EjW"/>
-                                    <constraint firstAttribute="width" constant="160" id="joD-ip-dXb"/>
+                                    <constraint firstAttribute="height" constant="180" id="L6B-1D-EjW"/>
+                                    <constraint firstAttribute="width" constant="180" id="joD-ip-dXb"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -165,8 +180,8 @@
                                     <action selector="guessChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2y-uu-vPi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-hZ-KBk">
-                                <rect key="frame" x="175" y="411" width="83" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1L-hZ-KBk">
+                                <rect key="frame" x="259" y="175" width="83" height="83"/>
                                 <state key="normal" image="blue_button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -174,25 +189,11 @@
                                     <action selector="playAgainPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfD-aB-rJb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
-                                <rect key="frame" x="238" y="138" width="125" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="AOw-tj-lCZ"/>
-                                    <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
-                                    <constraint firstAttribute="width" constant="150" id="ghL-pB-INq"/>
-                                    <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LTy-Cy-VWq"/>
-                                        <exclude reference="tTm-hB-GDy"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bii-1N-KWV" firstAttribute="top" secondItem="OmP-4f-HTO" secondAttribute="bottom" constant="50" id="1qv-TE-VyE"/>
+                            <constraint firstItem="9vU-6a-8XZ" firstAttribute="centerY" secondItem="OmP-4f-HTO" secondAttribute="centerY" id="2jE-qL-5qS"/>
                             <constraint firstItem="91p-tk-XA7" firstAttribute="centerX" secondItem="n1J-YV-oWp" secondAttribute="centerX" id="44S-U8-yMA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="n1J-YV-oWp" secondAttribute="trailing" constant="40" id="4EE-E7-PPV"/>
                             <constraint firstAttribute="centerX" secondItem="Bii-1N-KWV" secondAttribute="centerX" constant="140" id="7yE-dH-tu3"/>
@@ -212,8 +213,11 @@
                             <constraint firstAttribute="centerX" secondItem="OmP-4f-HTO" secondAttribute="centerX" id="TYG-vq-nAI"/>
                             <constraint firstAttribute="centerX" secondItem="Rd9-XW-4Cz" secondAttribute="centerX" id="X6F-Bw-r8T"/>
                             <constraint firstItem="91p-tk-XA7" firstAttribute="top" secondItem="n1J-YV-oWp" secondAttribute="bottom" constant="16" id="Xhj-6z-B0P"/>
+                            <constraint firstItem="z1L-hZ-KBk" firstAttribute="centerX" secondItem="9vU-6a-8XZ" secondAttribute="centerX" id="ZUB-UR-4oQ"/>
                             <constraint firstAttribute="centerX" secondItem="Bii-1N-KWV" secondAttribute="centerX" constant="140" id="aQx-9x-jtz"/>
                             <constraint firstAttribute="centerX" secondItem="Rd9-XW-4Cz" secondAttribute="centerX" id="beQ-r0-0k1"/>
+                            <constraint firstItem="z1L-hZ-KBk" firstAttribute="centerY" secondItem="9vU-6a-8XZ" secondAttribute="centerY" id="eT3-P8-kGT"/>
+                            <constraint firstItem="9vU-6a-8XZ" firstAttribute="centerX" secondItem="OmP-4f-HTO" secondAttribute="centerX" id="ewe-Kh-n2z"/>
                             <constraint firstItem="Tpj-B0-B0l" firstAttribute="top" secondItem="Rd9-XW-4Cz" secondAttribute="bottom" constant="10" id="fbN-0u-XcN"/>
                             <constraint firstItem="Gy2-oM-BUQ" firstAttribute="width" secondItem="Tpj-B0-B0l" secondAttribute="width" id="fdF-Qn-ezt"/>
                             <constraint firstItem="9vU-6a-8XZ" firstAttribute="centerX" secondItem="OmP-4f-HTO" secondAttribute="centerX" id="gsg-ZY-Rp5"/>
@@ -237,6 +241,8 @@
                                 <exclude reference="Fz7-o8-e60"/>
                                 <exclude reference="NFu-g6-PhV"/>
                                 <exclude reference="gsg-ZY-Rp5"/>
+                                <exclude reference="ndt-qE-yMe"/>
+                                <exclude reference="pNF-2b-yqS"/>
                                 <exclude reference="7yE-dH-tu3"/>
                                 <exclude reference="9Fu-f3-487"/>
                                 <exclude reference="EjJ-e2-LTt"/>
@@ -313,13 +319,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
                                 <rect key="frame" x="217" y="242" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
                                 <rect key="frame" x="316" y="242" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -335,7 +341,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blue_button.png" width="83" height="83"/>
+        <image name="blue_button.png" width="127" height="127"/>
         <image name="cat.jpg" width="1536" height="1536"/>
         <image name="frame.png" width="900" height="900"/>
         <image name="yellow_button.png" width="290" height="45"/>
