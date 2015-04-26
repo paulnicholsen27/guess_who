@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet var choiceButtons: Array<UIButton>?
     
     @IBOutlet weak var playAgainButton: UIButton!
+    
+
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }

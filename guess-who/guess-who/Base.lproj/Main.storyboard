@@ -18,22 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
-                                <rect key="frame" x="26" y="112" width="544" height="360"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
+                                <rect key="frame" x="28" y="112" width="544" height="360"/>
                                 <string key="text">I'm Paul Nicholsen, a Baritone with the GMCW since January 2015.  I built this app to learn how to build apps (this is my first one, yay)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQT-6L-YXR">
+                                <rect key="frame" x="487" y="58" width="46" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TWc-CG-g4e" kind="unwind" unwindAction="cancelToLandingViewController:" id="0j5-kM-Hqe"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.38051301830000001" blue="0.34743619019999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="0.84999999999999987" height="0.84999999999999987"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="-471" id="aFM-ep-sJg"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="92" id="CR5-aZ-TUs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HQT-6L-YXR" secondAttribute="trailing" constant="51" id="Hap-j4-UlT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" id="aFM-ep-sJg"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="12" id="fGw-DJ-Vkd"/>
+                            <constraint firstItem="HQT-6L-YXR" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="40" id="kcy-sF-GNg"/>
                             <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="11" id="qRH-o1-zdc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="12" id="wgy-D6-oWF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aFM-ep-sJg"/>
+                                <exclude reference="qRH-o1-zdc"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJc-Qy-1Cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TWc-CG-g4e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1417" y="184"/>
         </scene>
@@ -305,9 +328,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dk2-Tk-qmn" kind="popoverPresentation" popoverAnchorView="CYE-an-jFN" id="Vfk-2c-WHH">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="dk2-Tk-qmn" kind="presentation" id="Vfk-2c-WHH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twenty7 Productions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-OR-NLA">

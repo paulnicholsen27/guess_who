@@ -12,6 +12,9 @@ class LandingViewController: UIViewController {
 
     @IBOutlet weak var highScoreLabel: UILabel!
     
+    @IBAction func cancelToLandingViewController(segue:UIStoryboardSegue){
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
