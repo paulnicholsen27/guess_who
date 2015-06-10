@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 Paul Nichols. All rights reserved.
 //
 
+//TODO
+//D'arcee causes a bug
+//people with nicknames
+
 import UIKit
 import Foundation
 
@@ -58,19 +62,19 @@ class ViewController: UIViewController {
             }
         }
         scoreLabel.text = "\(score)"
+
         resetGame()
         //close database?
         
     }
     
+
     func resetGame(){
         score = 0
         turnCount = 0
         correctRun = 0
         playAgainButton.hidden = true
-
         displayRandomMember()
-        
     }
     
     func displayRandomMember(){
@@ -92,9 +96,11 @@ class ViewController: UIViewController {
         }
         var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
         correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
-        correctButton!.setTitle(correctName, forState: .Normal)
+//        correctButton!.setTitle(correctName, forState: .Normal)
+        rotateButton(correctButton!, newname: correctName!)
         for i in 0..<wrongButtons.count{
-            wrongButtons[i].setTitle(wrongAnswersArray[i], forState: .Normal)
+            rotateButton(wrongButtons[i], newname:wrongAnswersArray[i])
+
         }
 
         memberPic.image = UIImage(named: correctPicture)
@@ -140,6 +146,17 @@ class ViewController: UIViewController {
             defaults.setInteger(score, forKey: "highScore")
         }
     }
+    
+    func rotateButton(button:UIButton, newname:String) {
+        button.setTitle(newname, forState:.Normal)
+        UIView.transitionWithView(
+            button,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionFlipFromLeft,
+            animations: {},
+            completion: nil )
+            
+        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -147,4 +164,5 @@ class ViewController: UIViewController {
 
 
 }
+
 
