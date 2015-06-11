@@ -8,7 +8,9 @@
 
 //TODO
 //D'arcee causes a bug
+//RickBennett appeared twice
 //people with nicknames
+//James Roth - no picture
 
 import UIKit
 import Foundation
@@ -96,11 +98,9 @@ class ViewController: UIViewController {
         }
         var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
         correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
-//        correctButton!.setTitle(correctName, forState: .Normal)
         rotateButton(correctButton!, newname: correctName!)
         for i in 0..<wrongButtons.count{
             rotateButton(wrongButtons[i], newname:wrongAnswersArray[i])
-
         }
 
         memberPic.image = UIImage(named: correctPicture)
@@ -148,15 +148,15 @@ class ViewController: UIViewController {
     }
     
     func rotateButton(button:UIButton, newname:String) {
-        button.setTitle(newname, forState:.Normal)
+        
         UIView.transitionWithView(
             button,
             duration: 0.5,
-            options: UIViewAnimationOptions.TransitionFlipFromLeft,
-            animations: {},
+            options: UIViewAnimationOptions.TransitionFlipFromLeft | .AllowAnimatedContent,
+            animations: {button.setTitle(newname, forState:.Normal)},
             completion: nil )
-            
         }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
