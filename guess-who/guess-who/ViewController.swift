@@ -11,6 +11,7 @@
 //RickBennett appeared twice
 //people with nicknames
 //James Roth - no picture
+//not the same pic two turns in a row?
 
 import UIKit
 import Foundation
@@ -84,14 +85,15 @@ class ViewController: UIViewController {
             button.setBackgroundImage(yellowButton, forState: .Normal)
             button.userInteractionEnabled = true
         }
-        let querySQL = "SELECT name, picture_name from member_data where picture_name is not 'None' ORDER BY RANDOM() LIMIT 1";
-        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: nil)
+        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? ORDER BY RANDOM() LIMIT 1";
+
+        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: ["None"])
         rightAnswer!.next()
         correctName = rightAnswer!.stringForColumn("name")!
         let correctPicture = rightAnswer!.stringForColumn("picture_name")
         println("Correct answer is \(correctName)")
-        let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not 'None' and name is not '\(correctName)' ORDER BY RANDOM() LIMIT 3"
-        let wrongAnswersResultSet:FMResultSet = memberDatabase!.executeQuery(wrongAnswerSQLQuery, withArgumentsInArray: nil)
+        let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not ? and name is not ? ORDER BY RANDOM() LIMIT 3"
+        let wrongAnswersResultSet:FMResultSet = memberDatabase!.executeQuery(wrongAnswerSQLQuery, withArgumentsInArray: ["None", correctName!])
         var wrongAnswersArray:[String] = []
         while wrongAnswersResultSet.next() == true {
             wrongAnswersArray.append(wrongAnswersResultSet.stringForColumn("name"))
