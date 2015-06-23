@@ -46,7 +46,9 @@ class ViewController: UIViewController {
     var score = 0
     var correctRun = 0
     var turnCount = 0
-
+    var queryParameters = ["None"] //"None" to exclude empty pics, names to be added
+    var queryHoles = "?"
+    
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
     }
@@ -65,7 +67,6 @@ class ViewController: UIViewController {
             }
         }
         scoreLabel.text = "\(score)"
-
         resetGame()
         //close database?
         
@@ -77,6 +78,8 @@ class ViewController: UIViewController {
         turnCount = 0
         correctRun = 0
         playAgainButton.hidden = true
+        queryParameters = ["None"]
+        queryHoles = ""
         displayRandomMember()
     }
     
@@ -85,11 +88,13 @@ class ViewController: UIViewController {
             button.setBackgroundImage(yellowButton, forState: .Normal)
             button.userInteractionEnabled = true
         }
-        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? ORDER BY RANDOM() LIMIT 1";
-
-        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: ["None"])
+        
+        println(queryHoles)
+        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 1";
+        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
         rightAnswer!.next()
         correctName = rightAnswer!.stringForColumn("name")!
+
         let correctPicture = rightAnswer!.stringForColumn("picture_name")
         println("Correct answer is \(correctName)")
         let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not ? and name is not ? ORDER BY RANDOM() LIMIT 3"
@@ -106,6 +111,13 @@ class ViewController: UIViewController {
         }
 
         memberPic.image = UIImage(named: correctPicture)
+        queryParameters.append(correctName!)
+        println(queryParameters)
+        if (count(queryHoles) > 0) {
+            queryHoles += (",?") //already has one ?
+        } else {
+            queryHoles += ("?")
+        }
         return
     }
     
