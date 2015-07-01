@@ -7,11 +7,9 @@
 //
 
 //TODO
-//D'arcee causes a bug
 //RickBennett appeared twice
 //people with nicknames
 //James Roth - no picture
-//not the same pic two turns in a row?
 
 import UIKit
 import Foundation
@@ -19,9 +17,7 @@ import Foundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var memberPic: UIImageView!
-    
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
     @IBOutlet weak var thirdChoice: UIButton!
@@ -30,19 +26,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playAgainButton: UIButton!
     
-
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
-
+    let redButton = UIImage(named: "red_button") as UIImage?
+    let greenButton = UIImage(named: "green_button") as UIImage?
+    let yellowButton = UIImage(named: "yellow_button") as UIImage?
     var rightAnswer:FMResultSet?
     var databasePath:String?
     var correctName:String?
     var correctButton:UIButton?
     var memberDatabase:FMDatabase?
-    let redButton = UIImage(named: "red_button") as UIImage?
-    let greenButton = UIImage(named: "green_button") as UIImage?
-    let yellowButton = UIImage(named: "yellow_button") as UIImage?
+
     var score = 0
     var correctRun = 0
     var turnCount = 0
@@ -59,12 +54,10 @@ class ViewController: UIViewController {
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)
-        if memberDatabase == nil {
-            println("error finding database")
+        if memberDatabase!.open(){
+            println("database is ready")
         } else {
-            if memberDatabase!.open(){
-                println("database is ready")
-            }
+            println("error finding database")
         }
         scoreLabel.text = "\(score)"
         resetGame()
@@ -79,7 +72,7 @@ class ViewController: UIViewController {
         correctRun = 0
         playAgainButton.hidden = true
         queryParameters = ["None"]
-        queryHoles = ""
+        queryHoles = "?"
         displayRandomMember()
     }
     

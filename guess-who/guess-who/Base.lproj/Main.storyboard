@@ -289,44 +289,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-Gc-5cU">
-                                <rect key="frame" x="277" y="325" width="46" height="30"/>
-                                <state key="normal" title="Play!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PlayGameSegue" id="ev0-2g-g77"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-an-jFN">
-                                <rect key="frame" x="217" y="378" width="166" height="30"/>
-                                <state key="normal" title="About The Game">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-an-jFN">
+                                <rect key="frame" x="217" y="325" width="166" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="4oM-7N-c8a"/>
+                                </constraints>
+                                <state key="normal" title="About The Game" backgroundImage="yellow_button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="dk2-Tk-qmn" kind="presentation" id="Vfk-2c-WHH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twenty7 Productions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-OR-NLA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Twenty7 Productions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgL-OR-NLA">
                                 <rect key="frame" x="279" y="503" width="161" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
+                                <rect key="frame" x="261" y="401" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
-                                <rect key="frame" x="217" y="242" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
+                                <rect key="frame" x="254" y="430" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
-                                <rect key="frame" x="316" y="242" width="93" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Know Your Members!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-zy-Ehk">
+                                <rect key="frame" x="144" y="164" width="321" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="321" id="OMW-1c-vXq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-Gc-5cU">
+                                <rect key="frame" x="217" y="285" width="166" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="ids-Wd-6Kg"/>
+                                </constraints>
+                                <state key="normal" title="Play!" backgroundImage="yellow_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="PlayGameSegue" id="ev0-2g-g77"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="FTv-zy-Ehk" secondAttribute="centerX" id="8MB-AX-yF1"/>
+                            <constraint firstItem="8JG-3O-gjH" firstAttribute="top" secondItem="CYE-an-jFN" secondAttribute="bottom" constant="46" id="AsF-9A-DWu"/>
+                            <constraint firstItem="FTv-zy-Ehk" firstAttribute="top" secondItem="hIe-wC-iCK" secondAttribute="bottom" constant="144" id="BTe-Ip-9ow"/>
+                            <constraint firstItem="CYE-an-jFN" firstAttribute="top" secondItem="YMV-Gc-5cU" secondAttribute="bottom" constant="10" id="Cqd-Og-VEz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CYE-an-jFN" secondAttribute="trailing" constant="201" id="MTd-wo-Cfv"/>
+                            <constraint firstItem="PYJ-m5-gUq" firstAttribute="centerX" secondItem="8JG-3O-gjH" secondAttribute="centerX" constant="-3.5" id="Nug-4E-hxJ"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="centerX" secondItem="FTv-zy-Ehk" secondAttribute="centerX" constant="-4.5" id="P5c-Nf-7Vy"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="centerX" secondItem="FTv-zy-Ehk" secondAttribute="centerX" id="Q9O-p5-4dE"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="top" secondItem="FTv-zy-Ehk" secondAttribute="bottom" constant="31" id="Rog-MG-rn0"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="leading" secondItem="908-YK-3bQ" secondAttribute="leadingMargin" constant="201" id="X1Z-1W-nIe"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="centerX" secondItem="CYE-an-jFN" secondAttribute="centerX" id="ehM-tl-o0c"/>
+                            <constraint firstItem="YMV-Gc-5cU" firstAttribute="centerX" secondItem="CYE-an-jFN" secondAttribute="centerX" id="fRd-9R-MXl"/>
+                            <constraint firstItem="FTv-zy-Ehk" firstAttribute="leading" secondItem="908-YK-3bQ" secondAttribute="leadingMargin" id="h9t-ba-3Z1"/>
+                            <constraint firstItem="CYE-an-jFN" firstAttribute="leading" secondItem="908-YK-3bQ" secondAttribute="leadingMargin" constant="201" id="haW-af-hKb"/>
+                            <constraint firstItem="8JG-3O-gjH" firstAttribute="centerX" secondItem="CYE-an-jFN" secondAttribute="centerX" constant="4" id="iSe-vR-n57"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YMV-Gc-5cU" secondAttribute="trailing" constant="201" id="kDC-BC-KYB"/>
+                            <constraint firstItem="aOL-1v-RWI" firstAttribute="top" secondItem="zgL-OR-NLA" secondAttribute="bottom" constant="10" id="kbd-Jr-w3a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zgL-OR-NLA" secondAttribute="trailing" constant="10" id="mPq-O0-XYj"/>
+                            <constraint firstItem="PYJ-m5-gUq" firstAttribute="top" secondItem="8JG-3O-gjH" secondAttribute="bottom" constant="8" id="u8q-rJ-1Pz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="h9t-ba-3Z1"/>
+                                <exclude reference="Q9O-p5-4dE"/>
+                                <exclude reference="X1Z-1W-nIe"/>
+                                <exclude reference="fRd-9R-MXl"/>
+                                <exclude reference="kDC-BC-KYB"/>
+                                <exclude reference="MTd-wo-Cfv"/>
+                                <exclude reference="haW-af-hKb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="highScoreLabel" destination="PYJ-m5-gUq" id="8Ce-tM-esA"/>
