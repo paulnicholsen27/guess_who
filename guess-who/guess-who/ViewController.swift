@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     var correctRun = 0
     var turnCount = 0
     var queryParameters = ["None"] //"None" to exclude empty pics, names to be added
-    var queryHoles = "?"
+    var queryHoles = ""
     
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         correctRun = 0
         playAgainButton.hidden = true
         queryParameters = ["None"]
-        queryHoles = "?"
+        queryHoles = ""
         displayRandomMember()
     }
     
