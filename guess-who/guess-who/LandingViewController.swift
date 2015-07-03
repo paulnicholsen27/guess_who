@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class LandingViewController: UIViewController {
+class LandingViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var highScoreLabel: UILabel!
     
@@ -32,6 +33,31 @@ class LandingViewController: UIViewController {
     }
     
 
+    @IBAction func contactPressed(sender: AnyObject) {
+        var emailTitle = "Feedback on Chorus Member App"
+        var toRecipients = ["pnichols104@gmail.com"]
+        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setToRecipients(toRecipients)
+        self.presentViewController(mc, animated: true, completion: nil)
+        func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
+            switch result.value {
+            case MFMailComposeResultCancelled.value:
+                println("Mail cancelled")
+            case MFMailComposeResultSaved.value:
+                println("Mail saved")
+            case MFMailComposeResultSent.value:
+                println("Mail sent")
+            case MFMailComposeResultFailed.value:
+                println("Mail sent failure: %@", [error.localizedDescription])
+            default:
+                break
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
