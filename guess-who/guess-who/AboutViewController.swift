@@ -10,10 +10,10 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var firstParagraph: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        firstParagraph.textAlignment = NSTextAlignment.Justified        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

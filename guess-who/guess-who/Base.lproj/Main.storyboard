@@ -17,8 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
+                                <rect key="frame" x="38" y="116" width="3091" height="42"/>
+                                <string key="text">I'm Paul Nicholsen, a Baritone with the GMCW since January 2015.  I'm currently a web developer trying to learn how to build iPhone apps, so I took a stab at this one.  Constructive feedback is always welcomed, as are ideas for other apps you think might be helpful to the chorus.  You can email me at pnichols104@gmail.com (click on the Contact Me button on the home screen) or say hi at rehearsal!  </string>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-Au-Hdm">
+                                <rect key="frame" x="31" y="337" width="3092" height="50"/>
+                                <string key="text">If you don't see yourself show up in the game, it's probably because you don't have a picture on Groupanizer.  Also, if your picture is all fuzzy and nasty but you are not, you should probably add a better photo to Groupanizer (I'm happy to help!)</string>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQT-6L-YXR">
-                                <rect key="frame" x="487" y="58" width="46" height="30"/>
+                                <rect key="frame" x="505" y="52" width="46" height="34"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="16"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,39 +42,71 @@
                                     <segue destination="TWc-CG-g4e" kind="unwind" unwindAction="cancelToLandingViewController:" id="0j5-kM-Hqe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
-                                <rect key="frame" x="28" y="112" width="2673" height="376"/>
-                                <string key="text">I'm Paul Nicholsen, a Baritone with the GMCW since January 2015.  I'm currently a web developer trying to learn how to build iPhone apps, so I took a stab at this one.  Constructive feedback is always welcomed, as are ideas for other apps you think might be helpful to the chorus.  You can email me at pnichols104@gmail.com or say hi at rehearsal!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.38051301830000001" blue="0.34743619019999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.79977324598929622" green="0.88866147887033975" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.84999999999999987" height="0.84999999999999987"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NYh-Au-Hdm" secondAttribute="trailing" constant="20" id="4aZ-El-I12"/>
+                            <constraint firstItem="NYh-Au-Hdm" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="12" id="6HL-On-hOB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="20" id="6ua-zn-2vA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HQT-6L-YXR" secondAttribute="trailing" constant="20" id="7M8-1z-iq5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NYh-Au-Hdm" secondAttribute="trailing" constant="12" id="8jL-m5-UW1"/>
                             <constraint firstItem="Eez-9h-xmY" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="92" id="CR5-aZ-TUs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HQT-6L-YXR" secondAttribute="trailing" constant="20" id="F8P-dh-t12"/>
+                            <constraint firstItem="NYh-Au-Hdm" firstAttribute="top" secondItem="Eez-9h-xmY" secondAttribute="bottom" id="HP7-Uc-4DQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HQT-6L-YXR" secondAttribute="trailing" constant="51" id="Hap-j4-UlT"/>
+                            <constraint firstItem="HQT-6L-YXR" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="20" id="Hjw-eY-OmT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="20" id="JXi-ft-wjs"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="20" id="Leh-hl-0Mn"/>
+                            <constraint firstItem="HQT-6L-YXR" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="32" id="MTn-jk-CKV"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="22" id="N1p-bX-TnV"/>
                             <constraint firstAttribute="centerY" secondItem="Eez-9h-xmY" secondAttribute="centerY" id="Rwg-yH-rws"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="top" secondItem="HQT-6L-YXR" secondAttribute="bottom" constant="30" id="Uv6-s9-KB6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" id="aFM-ep-sJg"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="top" constant="-44" id="apS-DR-dRP"/>
+                            <constraint firstItem="NYh-Au-Hdm" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="20" id="eaq-fS-oxl"/>
                             <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="12" id="fGw-DJ-Vkd"/>
+                            <constraint firstItem="NYh-Au-Hdm" firstAttribute="top" secondItem="Eez-9h-xmY" secondAttribute="bottom" constant="-138" id="iVO-kY-5LV"/>
                             <constraint firstItem="HQT-6L-YXR" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="40" id="kcy-sF-GNg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="12" id="m5S-0s-qRQ"/>
+                            <constraint firstItem="NYh-Au-Hdm" firstAttribute="top" secondItem="Eez-9h-xmY" secondAttribute="bottom" constant="25" id="pY3-9T-yhl"/>
                             <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="11" id="qRH-o1-zdc"/>
+                            <constraint firstItem="HQT-6L-YXR" firstAttribute="top" secondItem="D7a-fX-NRm" secondAttribute="bottom" constant="20" id="qaz-ye-0Q3"/>
                             <constraint firstItem="Eez-9h-xmY" firstAttribute="leading" secondItem="I4F-oc-5bg" secondAttribute="leadingMargin" constant="12" id="tTa-Ed-Wht"/>
+                            <constraint firstItem="Eez-9h-xmY" firstAttribute="centerX" secondItem="NYh-Au-Hdm" secondAttribute="centerX" constant="8" id="vKx-rE-cYA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eez-9h-xmY" secondAttribute="trailing" constant="12" id="wgy-D6-oWF"/>
                             <constraint firstAttribute="centerX" secondItem="Eez-9h-xmY" secondAttribute="centerX" id="zW3-Zr-5MR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="CR5-aZ-TUs"/>
+                                <exclude reference="JXi-ft-wjs"/>
+                                <exclude reference="N1p-bX-TnV"/>
+                                <exclude reference="Rwg-yH-rws"/>
                                 <exclude reference="aFM-ep-sJg"/>
+                                <exclude reference="apS-DR-dRP"/>
                                 <exclude reference="fGw-DJ-Vkd"/>
+                                <exclude reference="m5S-0s-qRQ"/>
                                 <exclude reference="qRH-o1-zdc"/>
+                                <exclude reference="tTa-Ed-Wht"/>
+                                <exclude reference="vKx-rE-cYA"/>
                                 <exclude reference="wgy-D6-oWF"/>
+                                <exclude reference="zW3-Zr-5MR"/>
+                                <exclude reference="6HL-On-hOB"/>
+                                <exclude reference="8jL-m5-UW1"/>
+                                <exclude reference="HP7-Uc-4DQ"/>
+                                <exclude reference="iVO-kY-5LV"/>
+                                <exclude reference="7M8-1z-iq5"/>
+                                <exclude reference="Hap-j4-UlT"/>
+                                <exclude reference="MTn-jk-CKV"/>
+                                <exclude reference="kcy-sF-GNg"/>
+                                <exclude reference="qaz-ye-0Q3"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="firstParagraph" destination="Eez-9h-xmY" id="rS9-6p-eg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJc-Qy-1Cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TWc-CG-g4e" userLabel="Exit" sceneMemberID="exit"/>

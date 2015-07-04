@@ -6,6 +6,9 @@ import urllib
 import os
 import requests
 import re
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 from StringIO import StringIO
 
 from PIL import Image
@@ -22,11 +25,9 @@ def get_form_params(session, url):
     page = session.get(url)
     soupped_page = BeautifulSoup(page.content)
     form_build_id = soupped_page.select('input[name="form_build_id"]')[0]['value']
-    form_token = soupped_page.select('input[name="form_token"]')
-    if form_token:
-        return form_build_id, form_token[0].get('value')
-    else:
-        return form_build_id, None
+    # form_token = soupped_page.select('input[name="form_token"]')
+    return form_build_id
+
 
 def login(session, username, password):
     form_build_id = get_form_params(session, "http://gmcw.groupanizer.com")
@@ -35,7 +36,7 @@ def login(session, username, password):
                 'form_build_id': form_build_id,
                 'form_id': "user_login",
                 'op': 'Log in'}
-    logged_in = session.post("http://gmcw.groupanizer.com/g/dashboard", data=payload)
+    logged_in = session.post("http://gmcw.groupanizer.com/user/login", data=payload)
     cookies = logged_in.cookies
     return cookies
 
@@ -46,10 +47,22 @@ def get_member_data(session, cookies):
     soup = BeautifulSoup(page.content)
     member_lis = soup.findAll("li", {"class" : "member-picture-row"})
     if testing:
-        member_lis = member_lis[:5]
+        member_lis = member_lis[64:68]
     for li in member_lis:
+        member_url = li.find("a")["href"]
+        member_url = "http://gmcw.groupanizer.com" + member_url
+        member_page = session.get(member_url, cookies=cookies)
+        member_soup = BeautifulSoup(member_page.content)
+        try:
+            nickname = member_soup.find("div", {"class" : "field-name-field-nickname"}).find("div", {"class" : "field-item"}).string
+        except AttributeError:
+            nickname = None
         member_name = li.find("span", {"class" : "member-name"}).span.string
-        member_name = reverse_name(member_name)
+        member_name = reverse_name(member_name, nickname)
+        try:
+            print member_name
+        except: 
+            print 'error on {}'.format(li)
         picture_url = li.find("img", typeof="foaf:Image")["src"]
         picture_name = picture_parser(picture_url)
         # picture_name = get_picture(session, cookies, picture_url, member_name)
@@ -98,9 +111,12 @@ def insert_into_db(con, picture_name, member_name, link):
         print "ERROR: ", e
         errors.append((picture_name, member_name, link))
 
-def reverse_name(name):
+def reverse_name(name, nickname):
     words = [word.lstrip() for word in name.split(",")]
-    words = [words[-1]] + words[:-1]
+    if nickname and nickname != words[-1]:
+        words = [words[-1]] + ["'{}'".format(nickname)] + words[:-1]
+    else:
+        words = [words[-1]] + words[:-1]
     name = " ".join(words).replace(",", "")
     return name
 
@@ -111,8 +127,10 @@ def main():
     session = requests.session()
     cookies = login(session, username, password)
     member_data = get_member_data(session, cookies)
+    print member_data
     if testing:
-        member_data = member_data[:5]
+        print "test mode"
+        member_data = member_data[30:]
     for link in member_data:
         if link[0] != "test":
             insert_into_db(con, link[1], link[0], link[2])

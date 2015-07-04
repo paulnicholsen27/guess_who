@@ -961,6 +961,7 @@
 			isa = PBXGroup;
 			children = (
 				85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */,
+				85DDEF541AD61383001EAA6A /* AboutViewController.swift */,
 				85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */,
 				85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */,
 				85DDEF521AD4C34B001EAA6A /* LandingViewController.swift */,
@@ -968,7 +969,6 @@
 				85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */,
 				85CFD4161AAFDB2A0022FAEF /* Supporting Files */,
 				85CFD43A1AAFE1A30022FAEF /* guess-who-Bridging-Header.h */,
-				85DDEF541AD61383001EAA6A /* AboutViewController.swift */,
 			);
 			path = "guess-who";
 			sourceTree = "<group>";
