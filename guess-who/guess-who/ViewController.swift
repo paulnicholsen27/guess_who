@@ -9,7 +9,7 @@
 //TODO
 //RickBennett appeared twice
 //people with nicknames
-//James Roth - no picture
+//James Roth, Michael Hill, Brad Reynaldo, Marcus Brown - no picture
 
 import UIKit
 import Foundation

@@ -66,8 +66,8 @@ def get_member_data(session, cookies):
         picture_url = li.find("img", typeof="foaf:Image")["src"]
         picture_name = picture_parser(picture_url)
         # picture_name = get_picture(session, cookies, picture_url, member_name)
-        link = li.find("a")["href"]
-        members.append((member_name, picture_name, link))
+        if all([member_name, picture_name, member_url]):
+            members.append((member_name, picture_name, member_url))
     return members
 
 
@@ -81,7 +81,7 @@ def picture_parser(path):
 # def get_picture(session, cookies, picture_url, member_name):
 #     if "default_user" not in picture_url:
 #         file_name = "{}.jpg".format(member_name.encode('utf-8'))
-#         path = "/Users/paulnichols/Desktop/chorus members/{}".format(file_name)
+#         path = "/Users/paulnichols/Desktop/chorus_members/{}".format(file_name)
 #         with open(path, "wb") as f:
 #             f.write(urllib.urlopen(picture_url).read())
 #     else:
@@ -132,7 +132,7 @@ def main():
         print "test mode"
         member_data = member_data[30:]
     for link in member_data:
-        if link[0] != "test":
+        if not link[0].startswith("test"):
             insert_into_db(con, link[1], link[0], link[2])
     sql = '''select * from member_data'''
     cur.execute(sql)
