@@ -73,41 +73,47 @@ class ViewController: UIViewController {
         playAgainButton.hidden = true
         queryParameters = ["None"]
         queryHoles = ""
-        displayRandomMember()
+        setUpGameBoard()
     }
     
-    func displayRandomMember(){
+    func setUpGameBoard(){
         for button in choiceButtons! {
             button.setBackgroundImage(yellowButton, forState: .Normal)
             button.userInteractionEnabled = true
         }
         
-        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
-        memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
-        memberSet!.next()
-        correctName = memberSet!.stringForColumn("name")!
-
-        let correctPicture = memberSet!.stringForColumn("picture_name")
-
-        var wrongAnswersArray:[String] = []
-        while memberSet!.next() == true {
-            wrongAnswersArray.append(memberSet!.stringForColumn("name"))
-        }
+        var memberInfo = getMembers()
         var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
         correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
         rotateButton(correctButton!, newname: correctName!)
         for i in 0..<wrongButtons.count{
-            rotateButton(wrongButtons[i], newname:wrongAnswersArray[i])
+            rotateButton(wrongButtons[i], newname:memberInfo.wrongAnswers[i])
         }
 
-        memberPic.image = UIImage(named: correctPicture)
-        queryParameters.append(correctName!) //keep track of names already seen this game
+        memberPic.image = UIImage(named: memberInfo.correctPicture)
+        queryParameters.append(memberInfo.correctName) //keep track of names already seen this game
         if (count(queryHoles) > 0) {
             queryHoles += (",?") //if already has one '?'
         } else {
             queryHoles += ("?")
         }
         return
+    }
+    
+    func getMembers() -> (correctName: String, correctPicture:String, wrongAnswers:[String]) {
+        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
+        memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
+        memberSet!.next()
+        correctName = memberSet!.stringForColumn("name")!
+        
+        let correctPicture = memberSet!.stringForColumn("picture_name")
+        
+        var wrongAnswers:[String] = []
+        while memberSet!.next() == true {
+            wrongAnswers.append(memberSet!.stringForColumn("name"))
+        }
+
+        return (correctName!, correctPicture!, wrongAnswers)
     }
     
     func checkAnswer(sender:AnyObject){
@@ -129,7 +135,7 @@ class ViewController: UIViewController {
         
             self.turnCount += 1
             if self.turnCount < 10 {
-                self.displayRandomMember()
+                self.setUpGameBoard()
             } else {
                 self.checkHighScore()
                 self.playAgainButton.hidden = false
