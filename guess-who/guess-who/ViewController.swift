@@ -8,8 +8,8 @@
 
 //TODO
 //RickBennett appeared twice
-//people with nicknames
-//James Roth, Michael Hill, Brad Reynaldo, Marcus Brown - no picture
+//display high score and/or game score
+//fix display on small screens
 
 import UIKit
 import Foundation
@@ -29,10 +29,10 @@ class ViewController: UIViewController {
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
-    let redButton = UIImage(named: "red_button") as UIImage?
-    let greenButton = UIImage(named: "green_button") as UIImage?
-    let yellowButton = UIImage(named: "yellow_button") as UIImage?
-    var rightAnswer:FMResultSet?
+    let redButton = UIImage(named: "red_button")
+    let greenButton = UIImage(named: "green_button")
+    let yellowButton = UIImage(named: "yellow_button")
+    var memberSet:FMResultSet?
     var databasePath:String?
     var correctName:String?
     var correctButton:UIButton?
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     var correctRun = 0
     var turnCount = 0
     var queryParameters = ["None"] //"None" to exclude empty pics, names to be added
-    var queryHoles = ""
+    var queryHoles = "" //append "?" for each already-seen name
     
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
@@ -82,19 +82,16 @@ class ViewController: UIViewController {
             button.userInteractionEnabled = true
         }
         
-        println(queryHoles)
-        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 1";
-        rightAnswer = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
-        rightAnswer!.next()
-        correctName = rightAnswer!.stringForColumn("name")!
+        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
+        memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
+        memberSet!.next()
+        correctName = memberSet!.stringForColumn("name")!
 
-        let correctPicture = rightAnswer!.stringForColumn("picture_name")
-        println("Correct answer is \(correctName)")
-        let wrongAnswerSQLQuery = "SELECT name from member_data where picture_name is not ? and name is not ? ORDER BY RANDOM() LIMIT 3"
-        let wrongAnswersResultSet:FMResultSet = memberDatabase!.executeQuery(wrongAnswerSQLQuery, withArgumentsInArray: ["None", correctName!])
+        let correctPicture = memberSet!.stringForColumn("picture_name")
+
         var wrongAnswersArray:[String] = []
-        while wrongAnswersResultSet.next() == true {
-            wrongAnswersArray.append(wrongAnswersResultSet.stringForColumn("name"))
+        while memberSet!.next() == true {
+            wrongAnswersArray.append(memberSet!.stringForColumn("name"))
         }
         var wrongButtons = [firstChoice, secondChoice, thirdChoice, fourthChoice]
         correctButton = wrongButtons.removeAtIndex(Int(arc4random_uniform(4)))
@@ -104,10 +101,9 @@ class ViewController: UIViewController {
         }
 
         memberPic.image = UIImage(named: correctPicture)
-        queryParameters.append(correctName!)
-        println(queryParameters)
+        queryParameters.append(correctName!) //keep track of names already seen this game
         if (count(queryHoles) > 0) {
-            queryHoles += (",?") //already has one ?
+            queryHoles += (",?") //if already has one '?'
         } else {
             queryHoles += ("?")
         }
@@ -124,7 +120,6 @@ class ViewController: UIViewController {
             correctRun += 1
             score += (100 * correctRun)
             scoreLabel.text = "\(score)"
-            println(scoreLabel)
         } else {
             sender.setBackgroundImage(redButton, forState: .Normal)
             correctRun = 0
@@ -138,7 +133,6 @@ class ViewController: UIViewController {
             } else {
                 self.checkHighScore()
                 self.playAgainButton.hidden = false
-                println("game over")
             }
         }
         
@@ -148,8 +142,6 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         var oldHighScore = defaults.integerForKey("highScore")
         if (score > oldHighScore) {
-            println("Your old High Score was \(oldHighScore)")
-            println("your new high score is \(score)")
             defaults.setInteger(score, forKey: "highScore")
         }
     }
@@ -163,11 +155,6 @@ class ViewController: UIViewController {
             animations: {button.setTitle(newname, forState:.Normal)},
             completion: nil )
         }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
