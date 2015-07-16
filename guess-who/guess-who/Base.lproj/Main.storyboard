@@ -144,9 +144,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9vU-6a-8XZ">
                                 <rect key="frame" x="238" y="138" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="AOw-tj-lCZ"/>
+                                    <constraint firstAttribute="height" constant="140" id="AOw-tj-lCZ"/>
                                     <constraint firstAttribute="width" constant="125" id="LTy-Cy-VWq"/>
-                                    <constraint firstAttribute="width" constant="150" id="ghL-pB-INq"/>
+                                    <constraint firstAttribute="width" constant="140" id="ghL-pB-INq"/>
                                     <constraint firstAttribute="height" constant="125" id="tTm-hB-GDy"/>
                                 </constraints>
                                 <variation key="default">
@@ -167,8 +167,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="0dY-PD-Q2K"/>
                                     <constraint firstAttribute="height" constant="135" id="IpO-MF-XFm"/>
-                                    <constraint firstAttribute="height" constant="180" id="L6B-1D-EjW"/>
-                                    <constraint firstAttribute="width" constant="180" id="joD-ip-dXb"/>
+                                    <constraint firstAttribute="height" constant="170" id="L6B-1D-EjW"/>
+                                    <constraint firstAttribute="width" constant="170" id="joD-ip-dXb"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -190,8 +190,11 @@
                                 <rect key="frame" x="119" y="391" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="5dL-hh-FLa"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="7pu-19-O1P"/>
                                     <constraint firstAttribute="height" constant="40" id="7w0-kv-yn0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="ALV-g7-4st"/>
                                     <constraint firstAttribute="height" constant="30" id="Mw7-Fw-esI"/>
+                                    <constraint firstAttribute="height" constant="35" id="rUI-DC-VnJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -202,6 +205,9 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5dL-hh-FLa"/>
+                                        <exclude reference="7pu-19-O1P"/>
+                                        <exclude reference="7w0-kv-yn0"/>
+                                        <exclude reference="ALV-g7-4st"/>
                                         <exclude reference="Mw7-Fw-esI"/>
                                     </mask>
                                 </variation>
@@ -213,6 +219,9 @@
                                 <rect key="frame" x="119" y="441" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Cw7-7b-1te"/>
+                                    <constraint firstAttribute="height" constant="35" id="Wpr-ib-zzf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="de7-qI-gGT"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="eVP-AA-DWS"/>
                                     <constraint firstAttribute="height" constant="30" id="gIG-aF-2bN"/>
                                     <constraint firstAttribute="width" constant="250" id="mxX-Lc-Jjk"/>
                                 </constraints>
@@ -224,6 +233,9 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Cw7-7b-1te"/>
+                                        <exclude reference="de7-qI-gGT"/>
+                                        <exclude reference="eVP-AA-DWS"/>
                                         <exclude reference="gIG-aF-2bN"/>
                                         <exclude reference="mxX-Lc-Jjk"/>
                                     </mask>
@@ -235,9 +247,12 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-oM-BUQ">
                                 <rect key="frame" x="119" y="495" width="250" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="98Z-OJ-qt1"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="m6Q-Rx-A18"/>
                                     <constraint firstAttribute="height" constant="30" id="pKO-64-Hed"/>
                                     <constraint firstAttribute="width" constant="250" id="qpw-EC-vzS"/>
                                     <constraint firstAttribute="height" constant="40" id="rgr-C2-wKj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="tQ3-oJ-JFn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -247,8 +262,11 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="m6Q-Rx-A18"/>
                                         <exclude reference="pKO-64-Hed"/>
                                         <exclude reference="qpw-EC-vzS"/>
+                                        <exclude reference="rgr-C2-wKj"/>
+                                        <exclude reference="tQ3-oJ-JFn"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -259,10 +277,13 @@
                                 <rect key="frame" x="119" y="341" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4e0-Im-rcw"/>
+                                    <constraint firstAttribute="height" constant="35" id="DU8-nc-kJG"/>
                                     <constraint firstAttribute="height" constant="40" id="NTO-x0-Pbf"/>
                                     <constraint firstAttribute="width" constant="250" id="VfM-Se-wK9"/>
                                     <constraint firstAttribute="width" constant="250" id="VuZ-sh-bkh"/>
+                                    <constraint firstAttribute="height" constant="25" id="hZQ-qO-m6O"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="o3K-ac-cOp"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="uav-g6-uUa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -273,8 +294,11 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="4e0-Im-rcw"/>
+                                        <exclude reference="NTO-x0-Pbf"/>
                                         <exclude reference="VuZ-sh-bkh"/>
+                                        <exclude reference="hZQ-qO-m6O"/>
                                         <exclude reference="o3K-ac-cOp"/>
+                                        <exclude reference="uav-g6-uUa"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -313,7 +337,7 @@
                             <constraint firstItem="9vU-6a-8XZ" firstAttribute="centerX" secondItem="OmP-4f-HTO" secondAttribute="centerX" id="gsg-ZY-Rp5"/>
                             <constraint firstItem="Gy2-oM-BUQ" firstAttribute="centerX" secondItem="Tpj-B0-B0l" secondAttribute="centerX" id="hdb-4b-Q87"/>
                             <constraint firstItem="91p-tk-XA7" firstAttribute="top" secondItem="n1J-YV-oWp" secondAttribute="bottom" constant="8" id="jPf-9O-aL7"/>
-                            <constraint firstItem="Bii-1N-KWV" firstAttribute="top" secondItem="OmP-4f-HTO" secondAttribute="bottom" constant="20" id="kdC-li-VdQ"/>
+                            <constraint firstItem="Bii-1N-KWV" firstAttribute="top" secondItem="OmP-4f-HTO" secondAttribute="bottom" constant="15" id="kdC-li-VdQ"/>
                             <constraint firstItem="9vU-6a-8XZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ndt-qE-yMe"/>
                             <constraint firstAttribute="centerX" secondItem="9vU-6a-8XZ" secondAttribute="centerX" id="pNF-2b-yqS"/>
                             <constraint firstItem="n1J-YV-oWp" firstAttribute="top" secondItem="91p-tk-XA7" secondAttribute="bottom" constant="3" id="sb4-oY-T61"/>

@@ -10,6 +10,8 @@
 //RickBennett appeared twice
 //display high score and/or game score
 //fix display on small screens
+//assign favicons
+//include ad support
 
 import UIKit
 import Foundation
