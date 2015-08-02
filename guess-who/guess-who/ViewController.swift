@@ -7,11 +7,11 @@
 //
 
 //TODO
-//RickBennett appeared twice
 //display high score and/or game score
-//fix display on small screens
+//fix display on small screens (all screens!)
 //assign favicons
 //include ad support
+//opening screen
 
 import UIKit
 import Foundation
@@ -19,6 +19,7 @@ import Foundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var memberPic: UIImageView!
+    @IBOutlet weak var pictureFrame: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
+    
     let redButton = UIImage(named: "red_button")
     let greenButton = UIImage(named: "green_button")
     let yellowButton = UIImage(named: "yellow_button")
@@ -64,15 +66,17 @@ class ViewController: UIViewController {
         scoreLabel.text = "\(score)"
         resetGame()
         //close database?
-        
     }
     
 
     func resetGame(){
         score = 0
+        scoreLabel.text = "\(score)"
         turnCount = 0
         correctRun = 0
         playAgainButton.hidden = true
+        pictureFrame.hidden = false
+        memberPic.hidden = false
         queryParameters = ["None"]
         queryHoles = ""
         setUpGameBoard()
@@ -91,8 +95,14 @@ class ViewController: UIViewController {
         for i in 0..<wrongButtons.count{
             rotateButton(wrongButtons[i], newname:memberInfo.wrongAnswers[i])
         }
-
-        memberPic.image = UIImage(named: memberInfo.correctPicture)
+        var correctPicture = UIImage(named: memberInfo.correctPictureName)
+        var scaledSize = createScaleSize(correctPicture!)
+        memberPic.setTranslatesAutoresizingMaskIntoConstraints(true)
+        memberPic.image = correctPicture
+        memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 70, width: scaledSize.width, height: scaledSize.height)
+        var frameSize = createFrameSize(scaledSize)
+        pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 5, y: memberPic.frame.origin.y - 5, width: frameSize.width, height: frameSize.height)
+        pictureFrame.setTranslatesAutoresizingMaskIntoConstraints(true)
         queryParameters.append(memberInfo.correctName) //keep track of names already seen this game
         if (count(queryHoles) > 0) {
             queryHoles += (",?") //if already has one '?'
@@ -102,20 +112,20 @@ class ViewController: UIViewController {
         return
     }
     
-    func getMembers() -> (correctName: String, correctPicture:String, wrongAnswers:[String]) {
+    func getMembers() -> (correctName:String, correctPictureName:String, wrongAnswers:[String]) {
         let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
         memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
         memberSet!.next()
         correctName = memberSet!.stringForColumn("name")!
         
-        let correctPicture = memberSet!.stringForColumn("picture_name")
+        let correctPictureName = memberSet!.stringForColumn("picture_name")
         
         var wrongAnswers:[String] = []
         while memberSet!.next() == true {
             wrongAnswers.append(memberSet!.stringForColumn("name"))
         }
 
-        return (correctName!, correctPicture!, wrongAnswers)
+        return (correctName!, correctPictureName!, wrongAnswers)
     }
     
     func checkAnswer(sender:AnyObject){
@@ -141,11 +151,25 @@ class ViewController: UIViewController {
             } else {
                 self.checkHighScore()
                 self.playAgainButton.hidden = false
+                self.pictureFrame.hidden = true
+                self.memberPic.hidden = true
             }
         }
         
     }
 
+    func createScaleSize(unscaled:UIImage) -> (CGSize) {
+        var scaled = unscaled
+        var scaleFactor = 140 / unscaled.size.height
+        var newWidth = unscaled.size.width * scaleFactor
+        return CGSizeMake(newWidth, 140)
+    }
+    
+    func createFrameSize(size:CGSize) -> (CGSize) {
+        //returns frame 15 px bigger than image
+        return CGSizeMake(size.width + 15, size.height + 15)
+    }
+    
     func checkHighScore(){
         let defaults = NSUserDefaults.standardUserDefaults()
         var oldHighScore = defaults.integerForKey("highScore")
