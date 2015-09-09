@@ -15,27 +15,33 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var memberPic: UIImageView!
     @IBOutlet weak var pictureFrame: UIImageView!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
     @IBOutlet weak var thirdChoice: UIButton!
     @IBOutlet weak var fourthChoice: UIButton!
     @IBOutlet var choiceButtons: Array<UIButton>?
     
+    @IBOutlet weak var scoreLabel: UIBarButtonItem!
     @IBOutlet weak var playAgainButton: UIButton!
     
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
     
+    @IBOutlet weak var soundDisplay: UIButton!
+
+    
     let redButton = UIImage(named: "red_button")
     let greenButton = UIImage(named: "green_button")
     let yellowButton = UIImage(named: "yellow_button")
+    let soundOn = UIImage(named: "unmute")
+    let soundOff = UIImage(named: "mute")
     var memberSet:FMResultSet?
     var databasePath:String?
     var correctName:String?
@@ -47,13 +53,55 @@ class ViewController: UIViewController {
     var turnCount = 0
     var queryParameters = ["None"] //"None" to exclude empty pics, names to be added
     var queryHoles = "" //append "?" for each already-seen name
+
+    
+    var correctSound = AVAudioPlayer()
+    var wrongSound = AVAudioPlayer()
+    var finishedSound = AVAudioPlayer()
+    var playSound:String?
     
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
     }
     
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer {
+        var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        var url = NSURL.fileURLWithPath(path!)
+        var error: NSError?
+        var audioPlayer:AVAudioPlayer?
+        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        return audioPlayer!
+    }
+    
+    @IBAction func toggleSound(sender: AnyObject) {
+        if playSound! == "on" {
+            NSUserDefaults().setObject("off", forKey: "playSound")
+            playSound = NSUserDefaults().stringForKey("playSound")!
+            soundDisplay.setImage(soundOff, forState: UIControlState.Normal)
+        } else {
+            NSUserDefaults().setObject("on", forKey: "playSound")
+            playSound = NSUserDefaults().stringForKey("playSound")!
+            soundDisplay.setImage(soundOn, forState: UIControlState.Normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        playAgainButton.setTitle("", forState: .Normal)
+        playSound = NSUserDefaults().stringForKey("playSound")
+        if (playSound == nil) {
+            playSound = "on"
+        }
+        if playSound == "on" {
+            soundDisplay.setImage(soundOn, forState: UIControlState.Normal)
+        } else {
+            soundDisplay.setImage(soundOff, forState: UIControlState.Normal)
+        }
+        
+        correctSound = self.setupAudioPlayerWithFile("correct", type: "wav")
+        wrongSound = self.setupAudioPlayerWithFile("wrong", type: "wav")
+        finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
+        correctSound.prepareToPlay()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpeg")!)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
@@ -63,15 +111,13 @@ class ViewController: UIViewController {
         } else {
             println("error finding database")
         }
-        scoreLabel.text = "\(score)"
+        scoreLabel.title = "\(score)"
         resetGame()
-        //close database?
     }
-    
 
     func resetGame(){
         score = 0
-        scoreLabel.text = "\(score)"
+        scoreLabel.title = "\(score)"
         turnCount = 0
         correctRun = 0
         playAgainButton.hidden = true
@@ -103,6 +149,7 @@ class ViewController: UIViewController {
         var frameSize = createFrameSize(scaledSize)
         pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 5, y: memberPic.frame.origin.y - 5, width: frameSize.width, height: frameSize.height)
         pictureFrame.setTranslatesAutoresizingMaskIntoConstraints(true)
+        pictureFrame.layer.zPosition = 27
         queryParameters.append(memberInfo.correctName) //keep track of names already seen this game
         if (count(queryHoles) > 0) {
             queryHoles += (",?") //if already has one '?'
@@ -137,9 +184,15 @@ class ViewController: UIViewController {
         if selectedAnswer! == correctName! {
             correctRun += 1
             score += (100 * correctRun)
-            scoreLabel.text = "\(score)"
+            scoreLabel.title = "\(score)"
+            if playSound == "on" {
+                correctSound.play()
+            }
         } else {
             sender.setBackgroundImage(redButton, forState: .Normal)
+            if playSound == "on" {
+                wrongSound.play()
+            }
             correctRun = 0
         }
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1))
@@ -150,6 +203,9 @@ class ViewController: UIViewController {
                 self.setUpGameBoard()
             } else {
                 self.checkHighScore()
+                if self.playSound == "on" {
+                    self.finishedSound.play()
+                }
                 self.playAgainButton.hidden = false
                 self.pictureFrame.hidden = true
                 self.memberPic.hidden = true

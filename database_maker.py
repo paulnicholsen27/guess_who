@@ -66,6 +66,8 @@ def get_member_data(session, cookies):
         picture_url = li.find("img", typeof="foaf:Image")["src"]
         picture_name = picture_parser(picture_url)
         # picture_name = get_picture(session, cookies, picture_url, member_name)
+        if not picture_name:
+            print member_name
         if all([member_name, picture_name, member_url]):
             members.append((member_name, picture_name, member_url))
     return members
