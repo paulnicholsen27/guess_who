@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import iAd
 class AboutViewController: UIViewController {
 
     @IBOutlet weak var firstParagraph: UILabel!
     @IBOutlet weak var secondParagraph: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         var height = UIScreen.mainScreen().bounds.size.height
         if (height < 500) { //shrink for iphone4
             firstParagraph.font = UIFont(name: firstParagraph.font.fontName, size: 13)

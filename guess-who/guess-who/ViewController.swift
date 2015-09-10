@@ -8,7 +8,6 @@
 
 //TODO
 //display high score and/or game score
-//fix display on small screens (all screens!)
 //assign favicons
 //include ad support
 //opening screen
@@ -16,6 +15,7 @@
 import UIKit
 import Foundation
 import AVFoundation
+import iAd
 
 class ViewController: UIViewController {
 
@@ -40,8 +40,8 @@ class ViewController: UIViewController {
     let wrongButton = UIImage(named: "wrong_button")
     let rightButton = UIImage(named: "right_button")
     let generalButton = UIImage(named: "general_button")
-    let soundOn = UIImage(named: "unmute")
-    let soundOff = UIImage(named: "mute")
+    let soundOn = UIImage(named: "unmute")!.imageWithRenderingMode(.AlwaysTemplate)
+    let soundOff = UIImage(named: "mute")!.imageWithRenderingMode(.AlwaysTemplate)
     var memberSet:FMResultSet?
     var databasePath:String?
     var correctName:String?
@@ -60,6 +60,10 @@ class ViewController: UIViewController {
     var wrongSound = AVAudioPlayer()
     var finishedSound = AVAudioPlayer()
     var playSound:String?
+    
+    var smallScreen = false
+    
+
     
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
@@ -84,15 +88,16 @@ class ViewController: UIViewController {
             playSound = NSUserDefaults().stringForKey("playSound")!
             soundDisplay.setImage(soundOn, forState: UIControlState.Normal)
         }
+        soundDisplay.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UINavigationbar.appearance().barTintColor = UIColor.greenColor()
-//        UINavigationBar.appearance().backgroundColor = UIColor.black()
-//        UIBarButtonItem.appearance().tintColor = UIColor.magentaColor()
-////        UINavigationBar.appearance().titleTextAttributes = UIColor.blueColor()
-//        UITabBar.appearance().backgroundColor = UIColor.yellowColor();
+        self.canDisplayBannerAds = true
+        var height = UIScreen.mainScreen().bounds.size.height
+        if (height < 500) { //shrink for iphone4
+            smallScreen = true
+        }
         playAgainButton.setTitle("", forState: .Normal)
         playSound = NSUserDefaults().stringForKey("playSound")
         if (playSound == nil) {
@@ -108,7 +113,7 @@ class ViewController: UIViewController {
         wrongSound = self.setupAudioPlayerWithFile("wrong", type: "wav")
         finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
         correctSound.prepareToPlay()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
+        self.originalContentView.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)
@@ -221,10 +226,15 @@ class ViewController: UIViewController {
     }
 
     func createScaleSize(unscaled:UIImage) -> (CGSize) {
-        var scaled = unscaled
-        var scaleFactor = 160 / unscaled.size.height
+        var height:CGFloat
+        if (smallScreen) {
+            height = 110
+        } else {
+            height = 160
+        }
+        var scaleFactor = height / unscaled.size.height
         var newWidth = unscaled.size.width * scaleFactor
-        return CGSizeMake(newWidth, 160)
+        return CGSizeMake(newWidth, height)
     }
     
     func createFrameSize(size:CGSize) -> (CGSize) {

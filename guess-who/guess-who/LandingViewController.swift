@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import iAd
 
 class LandingViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
@@ -20,6 +21,7 @@ class LandingViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         let defaults = NSUserDefaults.standardUserDefaults()
         if let highScore = defaults.stringForKey("highScore") {
             highScoreLabel.text = "\(highScore)"

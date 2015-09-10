@@ -307,6 +307,7 @@
 		85ACD6E91BA1122B000E8AFA /* home-sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ACD6E81BA1122B000E8AFA /* home-sm.png */; };
 		85BE79D11B6EB419008D1510 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE79CF1B6EB419008D1510 /* splash.png */; };
 		85BE79D21B6EB419008D1510 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE79D01B6EB419008D1510 /* splash@2x.png */; };
+		85C11D2D1BA23FAE00AEC816 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C11D2C1BA23FAE00AEC816 /* iAd.framework */; };
 		85CE4CF11ACF83520068CD45 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 85CE4CF01ACF83520068CD45 /* background.jpeg */; };
 		85CFD4191AAFDB2A0022FAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */; };
 		85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */; };
@@ -635,6 +636,7 @@
 		85ACD6E81BA1122B000E8AFA /* home-sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-sm.png"; sourceTree = "<group>"; };
 		85BE79CF1B6EB419008D1510 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		85BE79D01B6EB419008D1510 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		85C11D2C1BA23FAE00AEC816 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		85CE4CF01ACF83520068CD45 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 		85CFD4131AAFDB2A0022FAEF /* guess-who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guess-who.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CFD4171AAFDB2A0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C11D2D1BA23FAE00AEC816 /* iAd.framework in Frameworks */,
 				85CFD4391AAFDB8A0022FAEF /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -999,6 +1002,7 @@
 		85CFD40A1AAFDB2A0022FAEF = {
 			isa = PBXGroup;
 			children = (
+				85C11D2C1BA23FAE00AEC816 /* iAd.framework */,
 				85CFD43B1AAFE1A40022FAEF /* FMDB.h */,
 				85CFD43C1AAFE1A40022FAEF /* FMDatabase.h */,
 				85CFD43D1AAFE1A40022FAEF /* FMDatabase.m */,
