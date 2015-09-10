@@ -37,9 +37,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var soundDisplay: UIButton!
 
     
-    let redButton = UIImage(named: "red_button")
-    let greenButton = UIImage(named: "green_button")
-    let yellowButton = UIImage(named: "yellow_button")
+    let wrongButton = UIImage(named: "wrong_button")
+    let rightButton = UIImage(named: "right_button")
+    let generalButton = UIImage(named: "general_button")
     let soundOn = UIImage(named: "unmute")
     let soundOff = UIImage(named: "mute")
     var memberSet:FMResultSet?
@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     var queryParameters = ["None"] //"None" to exclude empty pics, names to be added
     var queryHoles = "" //append "?" for each already-seen name
 
+    @IBOutlet weak var navbar: UIToolbar!
     
     var correctSound = AVAudioPlayer()
     var wrongSound = AVAudioPlayer()
@@ -87,6 +88,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        UINavigationbar.appearance().barTintColor = UIColor.greenColor()
+//        UINavigationBar.appearance().backgroundColor = UIColor.black()
+//        UIBarButtonItem.appearance().tintColor = UIColor.magentaColor()
+////        UINavigationBar.appearance().titleTextAttributes = UIColor.blueColor()
+//        UITabBar.appearance().backgroundColor = UIColor.yellowColor();
         playAgainButton.setTitle("", forState: .Normal)
         playSound = NSUserDefaults().stringForKey("playSound")
         if (playSound == nil) {
@@ -97,12 +103,12 @@ class ViewController: UIViewController {
         } else {
             soundDisplay.setImage(soundOff, forState: UIControlState.Normal)
         }
-        
+        soundDisplay.tintColor = UIColor.whiteColor()
         correctSound = self.setupAudioPlayerWithFile("correct", type: "wav")
         wrongSound = self.setupAudioPlayerWithFile("wrong", type: "wav")
         finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
         correctSound.prepareToPlay()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpeg")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)
@@ -130,7 +136,7 @@ class ViewController: UIViewController {
     
     func setUpGameBoard(){
         for button in choiceButtons! {
-            button.setBackgroundImage(yellowButton, forState: .Normal)
+            button.setBackgroundImage(generalButton, forState: .Normal)
             button.userInteractionEnabled = true
         }
         
@@ -147,7 +153,7 @@ class ViewController: UIViewController {
         memberPic.image = correctPicture
         memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 70, width: scaledSize.width, height: scaledSize.height)
         var frameSize = createFrameSize(scaledSize)
-        pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 5, y: memberPic.frame.origin.y - 5, width: frameSize.width, height: frameSize.height)
+        pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 25, y: memberPic.frame.origin.y - 30, width: frameSize.width, height: frameSize.height)
         pictureFrame.setTranslatesAutoresizingMaskIntoConstraints(true)
         pictureFrame.layer.zPosition = 27
         queryParameters.append(memberInfo.correctName) //keep track of names already seen this game
@@ -180,7 +186,7 @@ class ViewController: UIViewController {
         for button in choiceButtons! {
             button.userInteractionEnabled = false
         }
-        correctButton!.setBackgroundImage(greenButton, forState: .Normal)
+        correctButton!.setBackgroundImage(rightButton, forState: .Normal)
         if selectedAnswer! == correctName! {
             correctRun += 1
             score += (100 * correctRun)
@@ -189,7 +195,7 @@ class ViewController: UIViewController {
                 correctSound.play()
             }
         } else {
-            sender.setBackgroundImage(redButton, forState: .Normal)
+            sender.setBackgroundImage(wrongButton, forState: .Normal)
             if playSound == "on" {
                 wrongSound.play()
             }
@@ -216,14 +222,14 @@ class ViewController: UIViewController {
 
     func createScaleSize(unscaled:UIImage) -> (CGSize) {
         var scaled = unscaled
-        var scaleFactor = 140 / unscaled.size.height
+        var scaleFactor = 160 / unscaled.size.height
         var newWidth = unscaled.size.width * scaleFactor
-        return CGSizeMake(newWidth, 140)
+        return CGSizeMake(newWidth, 160)
     }
     
     func createFrameSize(size:CGSize) -> (CGSize) {
         //returns frame 15 px bigger than image
-        return CGSizeMake(size.width + 15, size.height + 15)
+        return CGSizeMake(size.width + 50, size.height + 60)
     }
     
     func checkHighScore(){
@@ -244,6 +250,12 @@ class ViewController: UIViewController {
             completion: nil )
         }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
 
 }
 
