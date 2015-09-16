@@ -22,9 +22,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var memberPic: UIImageView!
     @IBOutlet weak var pictureFrame: UIImageView!
     @IBOutlet weak var firstChoice: UIButton!
+    @IBOutlet weak var firstChoiceHeight: NSLayoutConstraint!
     @IBOutlet weak var secondChoice: UIButton!
+    @IBOutlet weak var secondChoiceHeight: NSLayoutConstraint!
     @IBOutlet weak var thirdChoice: UIButton!
+    @IBOutlet weak var thirdChoiceHeight: NSLayoutConstraint!
     @IBOutlet weak var fourthChoice: UIButton!
+    @IBOutlet weak var fourthChoiceHeight: NSLayoutConstraint!
     @IBOutlet var choiceButtons: Array<UIButton>?
     
     @IBOutlet weak var scoreLabel: UIBarButtonItem!
@@ -36,6 +40,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var soundDisplay: UIButton!
 
+    @IBOutlet var buttonHeights: [NSLayoutConstraint]!
     
     let wrongButton = UIImage(named: "wrong_button")
     let rightButton = UIImage(named: "right_button")
@@ -63,7 +68,8 @@ class ViewController: UIViewController {
     
     var smallScreen = false
     
-
+    
+    
     
     @IBAction func playAgainPressed(sender: AnyObject) {
         resetGame()
@@ -143,6 +149,7 @@ class ViewController: UIViewController {
         for button in choiceButtons! {
             button.setBackgroundImage(generalButton, forState: .Normal)
             button.userInteractionEnabled = true
+            button.frame.size.width = 50
         }
         
         var memberInfo = getMembers()
@@ -156,7 +163,7 @@ class ViewController: UIViewController {
         var scaledSize = createScaleSize(correctPicture!)
         memberPic.setTranslatesAutoresizingMaskIntoConstraints(true)
         memberPic.image = correctPicture
-        memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 70, width: scaledSize.width, height: scaledSize.height)
+        memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 80, width: scaledSize.width, height: scaledSize.height)
         var frameSize = createFrameSize(scaledSize)
         pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 25, y: memberPic.frame.origin.y - 30, width: frameSize.width, height: frameSize.height)
         pictureFrame.setTranslatesAutoresizingMaskIntoConstraints(true)
@@ -262,6 +269,22 @@ class ViewController: UIViewController {
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        super.viewDidLayoutSubviews()
+        
+        for height in buttonHeights! {
+            if smallScreen {
+                height.constant = 35
+            } else {
+                height.constant = 45
+            }
+        }
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
