@@ -120,6 +120,7 @@ class ViewController: UIViewController {
         finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
         correctSound.prepareToPlay()
         self.originalContentView.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
+        self.originalContentView.setTranslatesAutoresizingMaskIntoConstraints(true)
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)

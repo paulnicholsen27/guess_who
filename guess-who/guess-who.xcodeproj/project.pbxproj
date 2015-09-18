@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		85003E9E1BA0E27300496BA4 /* cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85003E9D1BA0E27300496BA4 /* cat.jpg */; };
+		852DF4A81BAA4C1300893949 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852DF4A71BAA4C1300893949 /* Media.xcassets */; };
 		8536894A1B9913F100836EC5 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 853689491B9913F100836EC5 /* wrong.wav */; };
 		8536894C1B9913FA00836EC5 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8536894B1B9913FA00836EC5 /* finished.wav */; };
 		8536894E1B99C31200836EC5 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8536894D1B99C31200836EC5 /* correct.wav */; };
-		857E42D81B7690F2004839DE /* Splash.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857E42D71B7690F2004839DE /* Splash.xcassets */; };
 		85903B821AEA6E1E002CE96A /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85903B811AEA6E1E002CE96A /* blue_button.png */; };
 		859E87891BA2054C0040FA09 /* background_music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859E87881BA2054C0040FA09 /* background_music.jpg */; };
 		859E87911BA2153D0040FA09 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 859E87901BA2153D0040FA09 /* frame.png */; };
@@ -305,14 +305,11 @@
 		85A68FB61B498263002585ED /* picture-27-1418701236.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85A68F311B498263002585ED /* picture-27-1418701236.jpg */; };
 		85A68FB81B498B24002585ED /* members.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 85A68FB71B498B24002585ED /* members.sqlite3 */; };
 		85ACD6E91BA1122B000E8AFA /* home-sm.png in Resources */ = {isa = PBXBuildFile; fileRef = 85ACD6E81BA1122B000E8AFA /* home-sm.png */; };
-		85BE79D11B6EB419008D1510 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE79CF1B6EB419008D1510 /* splash.png */; };
-		85BE79D21B6EB419008D1510 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85BE79D01B6EB419008D1510 /* splash@2x.png */; };
 		85C11D2D1BA23FAE00AEC816 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C11D2C1BA23FAE00AEC816 /* iAd.framework */; };
 		85CE4CF11ACF83520068CD45 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 85CE4CF01ACF83520068CD45 /* background.jpeg */; };
 		85CFD4191AAFDB2A0022FAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */; };
 		85CFD41B1AAFDB2A0022FAEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */; };
 		85CFD41E1AAFDB2A0022FAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */; };
-		85CFD4201AAFDB2A0022FAEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */; };
 		85CFD4231AAFDB2A0022FAEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */; };
 		85CFD42F1AAFDB2B0022FAEF /* guess_whoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD42E1AAFDB2B0022FAEF /* guess_whoTests.swift */; };
 		85CFD4391AAFDB8A0022FAEF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CFD4381AAFDB8A0022FAEF /* libsqlite3.dylib */; };
@@ -337,10 +334,10 @@
 
 /* Begin PBXFileReference section */
 		85003E9D1BA0E27300496BA4 /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = "<group>"; };
+		852DF4A71BAA4C1300893949 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		853689491B9913F100836EC5 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		8536894B1B9913FA00836EC5 /* finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finished.wav; sourceTree = "<group>"; };
 		8536894D1B99C31200836EC5 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
-		857E42D71B7690F2004839DE /* Splash.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Splash.xcassets; sourceTree = "<group>"; };
 		85903B811AEA6E1E002CE96A /* blue_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button.png; sourceTree = "<group>"; };
 		859E87881BA2054C0040FA09 /* background_music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_music.jpg; sourceTree = "<group>"; };
 		859E87901BA2153D0040FA09 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
@@ -634,8 +631,6 @@
 		85A68F311B498263002585ED /* picture-27-1418701236.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "picture-27-1418701236.jpg"; sourceTree = "<group>"; };
 		85A68FB71B498B24002585ED /* members.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = members.sqlite3; path = "chorus members/members.sqlite3"; sourceTree = "<group>"; };
 		85ACD6E81BA1122B000E8AFA /* home-sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-sm.png"; sourceTree = "<group>"; };
-		85BE79CF1B6EB419008D1510 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
-		85BE79D01B6EB419008D1510 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
 		85C11D2C1BA23FAE00AEC816 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		85CE4CF01ACF83520068CD45 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 		85CFD4131AAFDB2A0022FAEF /* guess-who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guess-who.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -643,7 +638,6 @@
 		85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		85CFD41D1AAFDB2A0022FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85CFD4221AAFDB2A0022FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guess-whoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CFD42D1AAFDB2B0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -688,6 +682,7 @@
 		85247FB11ACCDE25009FCBA4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				85ACD6E81BA1122B000E8AFA /* home-sm.png */,
 				859E879A1BA223D20040FA09 /* mute.png */,
 				859E87981BA223CC0040FA09 /* unmute.png */,
 				859E87921BA21CAC0040FA09 /* right_button.png */,
@@ -1035,13 +1030,10 @@
 			children = (
 				85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */,
 				85DDEF541AD61383001EAA6A /* AboutViewController.swift */,
-				85BE79CF1B6EB419008D1510 /* splash.png */,
-				857E42D71B7690F2004839DE /* Splash.xcassets */,
 				85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */,
 				85CFD41C1AAFDB2A0022FAEF /* Main.storyboard */,
 				85DDEF521AD4C34B001EAA6A /* LandingViewController.swift */,
-				85CFD41F1AAFDB2A0022FAEF /* Images.xcassets */,
-				85BE79D01B6EB419008D1510 /* splash@2x.png */,
+				852DF4A71BAA4C1300893949 /* Media.xcassets */,
 				85CFD4211AAFDB2A0022FAEF /* LaunchScreen.xib */,
 				85CFD4161AAFDB2A0022FAEF /* Supporting Files */,
 				85CFD43A1AAFE1A30022FAEF /* guess-who-Bridging-Header.h */,
@@ -1052,7 +1044,6 @@
 		85CFD4161AAFDB2A0022FAEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				85ACD6E81BA1122B000E8AFA /* home-sm.png */,
 				853689481B9913E100836EC5 /* Sound Effects */,
 				85A68FB71B498B24002585ED /* members.sqlite3 */,
 				85CE4CF01ACF83520068CD45 /* background.jpeg */,
@@ -1126,6 +1117,7 @@
 		85CFD40B1AAFDB2A0022FAEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Paul Nicholsen";
 				TargetAttributes = {
@@ -1233,6 +1225,7 @@
 				85A68F621B498263002585ED /* picture-115-1423028124.jpg in Resources */,
 				85A68E4E1B498246002585ED /* picture-108-1424539936.jpg in Resources */,
 				85A68E841B498253002585ED /* picture-422-1424495033.jpg in Resources */,
+				852DF4A81BAA4C1300893949 /* Media.xcassets in Resources */,
 				85A68E4B1B498246002585ED /* picture-261-1424540390.jpg in Resources */,
 				85A68F341B498263002585ED /* picture-97-1423630325.jpg in Resources */,
 				85A68F511B498263002585ED /* picture-220-1423408120.png in Resources */,
@@ -1250,7 +1243,6 @@
 				85A68F351B498263002585ED /* picture-198-1423629858.jpg in Resources */,
 				85A68FA21B498263002585ED /* picture-252-1422636258.jpg in Resources */,
 				85CE4CF11ACF83520068CD45 /* background.jpeg in Resources */,
-				85BE79D21B6EB419008D1510 /* splash@2x.png in Resources */,
 				85A68EA71B498253002585ED /* picture-55-1423707658.jpg in Resources */,
 				85A68F7A1B498263002585ED /* picture-122-1422736004.jpg in Resources */,
 				85A68F371B498263002585ED /* picture-69-1423629651.jpg in Resources */,
@@ -1271,7 +1263,6 @@
 				85A68F691B498263002585ED /* picture-100-1422896942.jpg in Resources */,
 				85A68F971B498263002585ED /* picture-153-1422638709.jpg in Resources */,
 				85A68F961B498263002585ED /* picture-52-1422639931.jpg in Resources */,
-				85BE79D11B6EB419008D1510 /* splash.png in Resources */,
 				85A68F531B498263002585ED /* picture-184-1423379411.jpg in Resources */,
 				85A68F441B498263002585ED /* picture-188-1423541794.jpg in Resources */,
 				85A68F7D1B498263002585ED /* picture-151-1422729762.jpg in Resources */,
@@ -1438,7 +1429,6 @@
 				85A68EAC1B498253002585ED /* picture-42-1423667028.jpg in Resources */,
 				85A68F8C1B498263002585ED /* picture-110-1422647540.jpg in Resources */,
 				85A68E501B498246002585ED /* picture-218-1424539740.jpg in Resources */,
-				85CFD4201AAFDB2A0022FAEF /* Images.xcassets in Resources */,
 				85A68F951B498263002585ED /* picture-45-1422641297.jpg in Resources */,
 				85A68DB61B498232002585ED /* picture-398-1429234691.jpg in Resources */,
 				85A68F631B498263002585ED /* picture-337-1422988035.jpg in Resources */,
@@ -1447,7 +1437,6 @@
 				85A68F481B498263002585ED /* picture-123-1423526638.jpg in Resources */,
 				85A68F501B498263002585ED /* picture-400-1423410256.png in Resources */,
 				85A68FAA1B498263002585ED /* picture-315-1422635503.jpg in Resources */,
-				857E42D81B7690F2004839DE /* Splash.xcassets in Resources */,
 				85A68E961B498253002585ED /* picture-105-1424309776.jpg in Resources */,
 				8536894C1B9913FA00836EC5 /* finished.wav in Resources */,
 				85A68D941B498229002585ED /* picture-229-1431034388.jpg in Resources */,
@@ -1617,7 +1606,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1635,7 +1623,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
