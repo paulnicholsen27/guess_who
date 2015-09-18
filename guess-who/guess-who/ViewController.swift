@@ -76,11 +76,15 @@ class ViewController: UIViewController {
     }
     
     func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer {
-        var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
-        var url = NSURL.fileURLWithPath(path!)
-        var error: NSError?
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
         var audioPlayer:AVAudioPlayer?
-        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        } catch let error1 as NSError {
+            audioPlayer = nil
+            print(error1)
+        }
         return audioPlayer!
     }
     
@@ -100,7 +104,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
-        var height = UIScreen.mainScreen().bounds.size.height
+        let height = UIScreen.mainScreen().bounds.size.height
         if (height < 500) { //shrink for iphone4
             smallScreen = true
         }
@@ -120,14 +124,14 @@ class ViewController: UIViewController {
         finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
         correctSound.prepareToPlay()
         self.originalContentView.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
-        self.originalContentView.setTranslatesAutoresizingMaskIntoConstraints(true)
+        self.originalContentView.translatesAutoresizingMaskIntoConstraints = true
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
         memberDatabase = FMDatabase(path: path)
         if memberDatabase!.open(){
-            println("database is ready")
+            print("database is ready")
         } else {
-            println("error finding database")
+            print("error finding database")
         }
         scoreLabel.title = "\(score)"
         resetGame()
@@ -160,17 +164,17 @@ class ViewController: UIViewController {
         for i in 0..<wrongButtons.count{
             rotateButton(wrongButtons[i], newname:memberInfo.wrongAnswers[i])
         }
-        var correctPicture = UIImage(named: memberInfo.correctPictureName)
-        var scaledSize = createScaleSize(correctPicture!)
-        memberPic.setTranslatesAutoresizingMaskIntoConstraints(true)
+        let correctPicture = UIImage(named: memberInfo.correctPictureName)
+        let scaledSize = createScaleSize(correctPicture!)
+        memberPic.translatesAutoresizingMaskIntoConstraints = true
         memberPic.image = correctPicture
         memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 80, width: scaledSize.width, height: scaledSize.height)
-        var frameSize = createFrameSize(scaledSize)
+        let frameSize = createFrameSize(scaledSize)
         pictureFrame.frame = CGRect(x: memberPic.frame.origin.x - 25, y: memberPic.frame.origin.y - 30, width: frameSize.width, height: frameSize.height)
-        pictureFrame.setTranslatesAutoresizingMaskIntoConstraints(true)
+        pictureFrame.translatesAutoresizingMaskIntoConstraints = true
         pictureFrame.layer.zPosition = 27
         queryParameters.append(memberInfo.correctName) //keep track of names already seen this game
-        if (count(queryHoles) > 0) {
+        if (queryHoles.characters.count > 0) {
             queryHoles += (",?") //if already has one '?'
         } else {
             queryHoles += ("?")
@@ -240,8 +244,8 @@ class ViewController: UIViewController {
         } else {
             height = 160
         }
-        var scaleFactor = height / unscaled.size.height
-        var newWidth = unscaled.size.width * scaleFactor
+        let scaleFactor = height / unscaled.size.height
+        let newWidth = unscaled.size.width * scaleFactor
         return CGSizeMake(newWidth, height)
     }
     
@@ -252,7 +256,7 @@ class ViewController: UIViewController {
     
     func checkHighScore(){
         let defaults = NSUserDefaults.standardUserDefaults()
-        var oldHighScore = defaults.integerForKey("highScore")
+        let oldHighScore = defaults.integerForKey("highScore")
         if (score > oldHighScore) {
             defaults.setInteger(score, forKey: "highScore")
         }
@@ -263,7 +267,7 @@ class ViewController: UIViewController {
         UIView.transitionWithView(
             button,
             duration: 0.5,
-            options: UIViewAnimationOptions.TransitionFlipFromLeft | .AllowAnimatedContent,
+            options: [UIViewAnimationOptions.TransitionFlipFromLeft, .AllowAnimatedContent],
             animations: {button.setTitle(newname, forState:.Normal)},
             completion: nil )
         }

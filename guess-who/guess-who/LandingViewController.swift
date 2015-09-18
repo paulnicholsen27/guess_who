@@ -30,25 +30,25 @@ class LandingViewController: UIViewController, MFMailComposeViewControllerDelega
     }
 
     @IBAction func contactPressed(sender: AnyObject) {
-        var emailTitle = "Feedback on Chorus Member App"
-        var toRecipients = ["pnichols104@gmail.com"]
-        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        let emailTitle = "Feedback on Chorus Member App"
+        let toRecipients = ["pnichols104@gmail.com"]
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self
         mc.setSubject(emailTitle)
         mc.setToRecipients(toRecipients)
         self.presentViewController(mc, animated: true, completion: nil)
     }
     
-    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
-        switch result.value {
-        case MFMailComposeResultCancelled.value:
-            println("Mail cancelled")
-        case MFMailComposeResultSaved.value:
-            println("Mail saved")
-        case MFMailComposeResultSent.value:
-            println("Mail sent")
-        case MFMailComposeResultFailed.value:
-            println("Mail sent failure: %@", [error.localizedDescription])
+    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail sent failure: %@", [error?.localizedDescription])
         default:
             break
         }

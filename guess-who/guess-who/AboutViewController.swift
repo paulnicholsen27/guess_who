@@ -15,7 +15,7 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
-        var height = UIScreen.mainScreen().bounds.size.height
+        let height = UIScreen.mainScreen().bounds.size.height
         if (height < 500) { //shrink for iphone4
             firstParagraph.font = UIFont(name: firstParagraph.font.fontName, size: 13)
             secondParagraph.font = UIFont(name: secondParagraph.font.fontName, size: 13)
