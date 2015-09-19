@@ -47,10 +47,11 @@ def get_member_data(session, cookies):
     soup = BeautifulSoup(page.content)
     member_lis = soup.findAll("li", {"class" : "member-picture-row"})
     if testing:
-        member_lis = member_lis[64:68]
+        member_lis = member_lis[64:65] #random middle selection
     for li in member_lis:
         member_url = li.find("a")["href"]
         member_url = "http://gmcw.groupanizer.com" + member_url
+        print member_url
         member_page = session.get(member_url, cookies=cookies)
         member_soup = BeautifulSoup(member_page.content)
         try:
@@ -59,6 +60,12 @@ def get_member_data(session, cookies):
             nickname = None
         member_name = li.find("span", {"class" : "member-name"}).span.string
         member_name = reverse_name(member_name, nickname)
+        strongs = member_soup.findAll("strong") #Hey, I didn't make the website.
+        roles = strongs[0].next_sibling
+        # roles = [role.strip() for role in roles.split(",")]
+        email = strongs[1].next_sibling.strip()
+        print roles
+        print email
         try:
             print member_name
         except: 
@@ -69,7 +76,7 @@ def get_member_data(session, cookies):
         if not picture_name:
             print member_name
         if all([member_name, picture_name, member_url]):
-            members.append((member_name, picture_name, member_url))
+            members.append((member_name, picture_name, member_url, roles, email))
     return members
 
 
@@ -97,21 +104,21 @@ def create_or_open_db(db_filename):
     if db_is_new:
         sql = "DROP TABLE IF EXISTS member_data;"
         cursor.execute(sql)
-        sql = '''CREATE TABLE member_data(id integer primary key autoincrement, picture_name TEXT, name TEXT, link TEXT);'''
+        sql = '''CREATE TABLE member_data(id integer primary key autoincrement, picture_name TEXT, name TEXT, link TEXT, roles TEXT, email TEXT);'''
         cursor.execute(sql)
     else:
         print 'Schema exists\n'
 
     return con
 
-def insert_into_db(con, picture_name, member_name, link):
+def insert_into_db(con, picture_name, member_name, link, roles, email):
     try:
-        sql = '''INSERT INTO member_data (picture_name, name, link) VALUES (?, ?, ?)'''
-        con.cursor().execute(sql, (picture_name, member_name, link))
+        sql = '''INSERT INTO member_data (picture_name, name, link, roles, email) VALUES (?, ?, ?, ?, ?)'''
+        con.cursor().execute(sql, (picture_name, member_name, link, roles, email))
         con.commit()
     except Exception as e:
         print "ERROR: ", e
-        errors.append((picture_name, member_name, link))
+        errors.append((picture_name, member_name, link, roles, email))
 
 def reverse_name(name, nickname):
     words = [word.lstrip() for word in name.split(",")]
@@ -135,7 +142,7 @@ def main():
         member_data = member_data[30:]
     for link in member_data:
         if not link[0].startswith("test"):
-            insert_into_db(con, link[1], link[0], link[2])
+            insert_into_db(con, link[1], link[0], link[2], link[3], link[4])
     sql = '''select * from member_data'''
     cur.execute(sql)
     rows = cur.fetchall()

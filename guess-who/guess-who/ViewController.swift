@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     var databasePath:String?
     var correctName:String?
     var correctButton:UIButton?
+    var newMember:Bool?
     var memberDatabase:FMDatabase?
 
     var score = 0
@@ -165,7 +166,13 @@ class ViewController: UIViewController {
             rotateButton(wrongButtons[i], newname:memberInfo.wrongAnswers[i])
         }
         let correctPicture = UIImage(named: memberInfo.correctPictureName)
+        print(memberInfo)
         let scaledSize = createScaleSize(correctPicture!)
+        if (newMember == true) {
+            print("new Member!")
+        } else {
+            print("he is old.")
+        }
         memberPic.translatesAutoresizingMaskIntoConstraints = true
         memberPic.image = correctPicture
         memberPic.frame = CGRect(x: self.view.center.x - scaledSize.width / 2, y: self.view.center.y - scaledSize.height / 2 - 80, width: scaledSize.width, height: scaledSize.height)
@@ -182,20 +189,25 @@ class ViewController: UIViewController {
         return
     }
     
-    func getMembers() -> (correctName:String, correctPictureName:String, wrongAnswers:[String]) {
-        let querySQL = "SELECT name, picture_name from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
+    func getMembers() -> (correctName:String, correctPictureName:String, newMember:Bool, wrongAnswers:[String]) {
+        let querySQL = "SELECT name, picture_name, roles from member_data where picture_name is not ? and name not in (\(queryHoles)) ORDER BY RANDOM() LIMIT 4";
         memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
         memberSet!.next()
         correctName = memberSet!.stringForColumn("name")!
+        print(correctName)
         
         let correctPictureName = memberSet!.stringForColumn("picture_name")
-        
+        let roles = memberSet!.stringForColumn("roles")
+        newMember = false
+        if roles.lowercaseString.rangeOfString("new member") != nil {
+            newMember = true
+        }
         var wrongAnswers:[String] = []
         while memberSet!.next() == true {
             wrongAnswers.append(memberSet!.stringForColumn("name"))
         }
 
-        return (correctName!, correctPictureName!, wrongAnswers)
+        return (correctName!, correctPictureName!, newMember!, wrongAnswers)
     }
     
     func checkAnswer(sender:AnyObject){
