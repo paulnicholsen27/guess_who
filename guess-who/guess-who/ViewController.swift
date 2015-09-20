@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UIBarButtonItem!
     @IBOutlet weak var playAgainButton: UIButton!
     
+    @IBOutlet weak var newMemberBadge: UIImageView!
     @IBAction func guessChosen(sender: AnyObject) {
         checkAnswer(sender)
     }
@@ -110,6 +111,8 @@ class ViewController: UIViewController {
             smallScreen = true
         }
         playAgainButton.setTitle("", forState: .Normal)
+        
+        //sound Setup
         playSound = NSUserDefaults().stringForKey("playSound")
         if (playSound == nil) {
             playSound = "on"
@@ -124,10 +127,13 @@ class ViewController: UIViewController {
         wrongSound = self.setupAudioPlayerWithFile("wrong", type: "wav")
         finishedSound = self.setupAudioPlayerWithFile("finished", type: "wav")
         correctSound.prepareToPlay()
+        
         self.originalContentView.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
         self.originalContentView.translatesAutoresizingMaskIntoConstraints = true
         let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
         playAgainButton.hidden = true
+        newMemberBadge.hidden = true
+        newMemberBadge.layer.zPosition = 54
         memberDatabase = FMDatabase(path: path)
         if memberDatabase!.open(){
             print("database is ready")
@@ -166,12 +172,11 @@ class ViewController: UIViewController {
             rotateButton(wrongButtons[i], newname:memberInfo.wrongAnswers[i])
         }
         let correctPicture = UIImage(named: memberInfo.correctPictureName)
-        print(memberInfo)
         let scaledSize = createScaleSize(correctPicture!)
         if (newMember == true) {
-            print("new Member!")
+            newMemberBadge.hidden = false
         } else {
-            print("he is old.")
+            newMemberBadge.hidden = true
         }
         memberPic.translatesAutoresizingMaskIntoConstraints = true
         memberPic.image = correctPicture
@@ -241,6 +246,7 @@ class ViewController: UIViewController {
                 if self.playSound == "on" {
                     self.finishedSound.play()
                 }
+                self.newMemberBadge.hidden = true
                 self.playAgainButton.hidden = false
                 self.pictureFrame.hidden = true
                 self.memberPic.hidden = true
