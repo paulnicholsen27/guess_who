@@ -705,7 +705,7 @@
 		859E879A1BA223D20040FA09 /* mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mute.png; sourceTree = "<group>"; };
 		85ACD6E81BA1122B000E8AFA /* home-sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-sm.png"; sourceTree = "<group>"; };
 		85C11D2C1BA23FAE00AEC816 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		85CFD4131AAFDB2A0022FAEF /* Know Your Members.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Members.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CFD4131AAFDB2A0022FAEF /* guess-who.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "guess-who.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CFD4171AAFDB2A0022FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85CFD4181AAFDB2A0022FAEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85CFD41A1AAFDB2A0022FAEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1122,7 +1122,7 @@
 		85CFD4141AAFDB2A0022FAEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85CFD4131AAFDB2A0022FAEF /* Know Your Members.app */,
+				85CFD4131AAFDB2A0022FAEF /* guess-who.app */,
 				85CFD4281AAFDB2B0022FAEF /* guess-whoTests.xctest */,
 			);
 			name = Products;
@@ -1504,9 +1504,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		85CFD4121AAFDB2A0022FAEF /* Know Your Members */ = {
+		85CFD4121AAFDB2A0022FAEF /* guess-who */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "Know Your Members" */;
+			buildConfigurationList = 85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-who" */;
 			buildPhases = (
 				85CFD40F1AAFDB2A0022FAEF /* Sources */,
 				85CFD4101AAFDB2A0022FAEF /* Frameworks */,
@@ -1516,9 +1516,9 @@
 			);
 			dependencies = (
 			);
-			name = "Know Your Members";
+			name = "guess-who";
 			productName = "guess-who";
-			productReference = 85CFD4131AAFDB2A0022FAEF /* Know Your Members.app */;
+			productReference = 85CFD4131AAFDB2A0022FAEF /* guess-who.app */;
 			productType = "com.apple.product-type.application";
 		};
 		85CFD4271AAFDB2B0022FAEF /* guess-whoTests */ = {
@@ -1573,7 +1573,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				85CFD4121AAFDB2A0022FAEF /* Know Your Members */,
+				85CFD4121AAFDB2A0022FAEF /* guess-who */,
 				85CFD4271AAFDB2B0022FAEF /* guess-whoTests */,
 			);
 		};
@@ -2283,7 +2283,7 @@
 /* Begin PBXTargetDependency section */
 		85CFD42A1AAFDB2B0022FAEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 85CFD4121AAFDB2A0022FAEF /* Know Your Members */;
+			target = 85CFD4121AAFDB2A0022FAEF /* guess-who */;
 			targetProxy = 85CFD4291AAFDB2B0022FAEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2471,7 +2471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "Know Your Members" */ = {
+		85CFD4321AAFDB2B0022FAEF /* Build configuration list for PBXNativeTarget "guess-who" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85CFD4331AAFDB2B0022FAEF /* Debug */,

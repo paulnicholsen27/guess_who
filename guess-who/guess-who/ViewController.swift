@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         var audioPlayer:AVAudioPlayer?
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: url)
-        } catch let _ as NSError {
+        } catch _ as NSError {
             audioPlayer = nil
         }
         return audioPlayer!
