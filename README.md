@@ -1,4 +1,4 @@
-# guess_who
+# Know Your Members!
 
 How well do you know the members of the Gay Men's Chorus of Washington?  Try to beat your high score and be the Queen of the chorus!
 
