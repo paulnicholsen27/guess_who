@@ -9,7 +9,7 @@
         <!--About View Controller-->
         <scene sceneID="vhO-Wy-By8">
             <objects>
-                <viewController id="dk2-Tk-qmn" customClass="AboutViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dk2-Tk-qmn" customClass="AboutViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D7a-fX-NRm"/>
                         <viewControllerLayoutGuide type="bottom" id="cfl-SA-jUE"/>
@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
-                                <rect key="frame" x="36" y="104" width="528" height="123"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-9h-xmY">
+                                <rect key="frame" x="40" y="104" width="520" height="123"/>
                                 <string key="text">I'm Paul Nicholsen, a Baritone with the GMCW since January 2015.  I'm currently a web developer trying to learn how to build iPhone apps, so I took a stab at this one.  Constructive feedback is always welcomed, as are ideas for other apps you think might be helpful to the chorus.  You can email me at pnichols104@gmail.com (click on the Contact Me button on the home screen) or say hi at rehearsal!  </string>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQT-6L-YXR">
-                                <rect key="frame" x="530" y="40" width="34" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQT-6L-YXR">
+                                <rect key="frame" x="526" y="40" width="34" height="34"/>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="16"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,8 +36,8 @@
                                     <segue destination="TWc-CG-g4e" kind="unwind" unwindAction="cancelToLandingViewController:" id="0j5-kM-Hqe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-Au-Hdm">
-                                <rect key="frame" x="36" y="252" width="528" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYh-Au-Hdm">
+                                <rect key="frame" x="40" y="252" width="520" height="82"/>
                                 <string key="text">If you don't see yourself show up in the game, it's probably because you don't have a picture on Groupanizer.  Also, if your picture is all fuzzy and nasty but you are not, you should probably add a better photo to Groupanizer (I'm happy to help!)</string>
                                 <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,7 +118,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -144,7 +144,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="FirstChoice" backgroundImage="yellow_button.png">
+                                <state key="normal" title="FirstChoice">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -160,7 +160,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="SecondChoice" backgroundImage="yellow_button.png">
+                                <state key="normal" title="SecondChoice">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -176,7 +176,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Button" backgroundImage="yellow_button.png">
+                                <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -192,7 +192,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Button" backgroundImage="yellow_button.png">
+                                <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -313,7 +313,7 @@
         <!--Landing View Controller-->
         <scene sceneID="8NC-g8-JZX">
             <objects>
-                <viewController id="plI-Nn-sHs" customClass="LandingViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="plI-Nn-sHs" customClass="LandingViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIe-wC-iCK"/>
                         <viewControllerLayoutGuide type="bottom" id="aOL-1v-RWI"/>
@@ -322,14 +322,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
-                                <rect key="frame" x="257" y="418" width="86" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-3O-gjH">
+                                <rect key="frame" x="258" y="418" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
-                                <rect key="frame" x="295" y="447" width="10" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYJ-m5-gUq">
+                                <rect key="frame" x="295" y="447" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -464,6 +464,5 @@
         <image name="home-sm.png" width="25" height="25"/>
         <image name="new_member.png" width="272" height="192"/>
         <image name="unmute.png" width="50" height="50"/>
-        <image name="yellow_button.png" width="213" height="43"/>
     </resources>
 </document>

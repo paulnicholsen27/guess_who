@@ -106,6 +106,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
+        
         let height = UIScreen.mainScreen().bounds.size.height
         if (height < 500) { //shrink for iphone4
             smallScreen = true
