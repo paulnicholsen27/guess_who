@@ -83,9 +83,8 @@ class ViewController: UIViewController {
         var audioPlayer:AVAudioPlayer?
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: url)
-        } catch let error1 as NSError {
+        } catch let _ as NSError {
             audioPlayer = nil
-            print(error1)
         }
         return audioPlayer!
     }
@@ -136,11 +135,7 @@ class ViewController: UIViewController {
         newMemberBadge.hidden = true
         newMemberBadge.layer.zPosition = 54
         memberDatabase = FMDatabase(path: path)
-        if memberDatabase!.open(){
-            print("database is ready")
-        } else {
-            print("error finding database")
-        }
+        memberDatabase!.open()
         scoreLabel.title = "\(score)"
         resetGame()
     }
@@ -200,7 +195,6 @@ class ViewController: UIViewController {
         memberSet = memberDatabase!.executeQuery(querySQL, withArgumentsInArray: queryParameters)
         memberSet!.next()
         correctName = memberSet!.stringForColumn("name")!
-        print(correctName)
         
         let correctPictureName = memberSet!.stringForColumn("picture_name")
         let roles = memberSet!.stringForColumn("roles")

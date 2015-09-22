@@ -11,8 +11,8 @@
 		8536894A1B9913F100836EC5 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 853689491B9913F100836EC5 /* wrong.wav */; };
 		8536894C1B9913FA00836EC5 /* finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8536894B1B9913FA00836EC5 /* finished.wav */; };
 		8536894E1B99C31200836EC5 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8536894D1B99C31200836EC5 /* correct.wav */; };
-		8576C9521BB0E0B30098CD93 /* new_member.png in Resources */ = {isa = PBXBuildFile; fileRef = 8576C9511BB0E0B30098CD93 /* new_member.png */; settings = {ASSET_TAGS = (); }; };
 		8576C9541BB0E4270098CD93 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8576C9531BB0E4270098CD93 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
+		8576C9561BB0E68B0098CD93 /* new_member.png in Resources */ = {isa = PBXBuildFile; fileRef = 8576C9551BB0E68B0098CD93 /* new_member.png */; settings = {ASSET_TAGS = (); }; };
 		85903B821AEA6E1E002CE96A /* blue_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 85903B811AEA6E1E002CE96A /* blue_button.png */; };
 		859E87891BA2054C0040FA09 /* background_music.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859E87881BA2054C0040FA09 /* background_music.jpg */; };
 		859E87911BA2153D0040FA09 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 859E87901BA2153D0040FA09 /* frame.png */; };
@@ -693,8 +693,8 @@
 		853689491B9913F100836EC5 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		8536894B1B9913FA00836EC5 /* finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finished.wav; sourceTree = "<group>"; };
 		8536894D1B99C31200836EC5 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
-		8576C9511BB0E0B30098CD93 /* new_member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_member.png; sourceTree = "<group>"; };
 		8576C9531BB0E4270098CD93 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		8576C9551BB0E68B0098CD93 /* new_member.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_member.png; sourceTree = "<group>"; };
 		85903B811AEA6E1E002CE96A /* blue_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_button.png; sourceTree = "<group>"; };
 		859E87881BA2054C0040FA09 /* background_music.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_music.jpg; sourceTree = "<group>"; };
 		859E87901BA2153D0040FA09 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
@@ -1074,12 +1074,12 @@
 		85247FB11ACCDE25009FCBA4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8576C9551BB0E68B0098CD93 /* new_member.png */,
 				85ACD6E81BA1122B000E8AFA /* home-sm.png */,
 				859E879A1BA223D20040FA09 /* mute.png */,
 				859E87981BA223CC0040FA09 /* unmute.png */,
 				859E87921BA21CAC0040FA09 /* right_button.png */,
 				859E87941BA21CB50040FA09 /* wrong_button.png */,
-				8576C9511BB0E0B30098CD93 /* new_member.png */,
 				859E87961BA21CBB0040FA09 /* general_button.png */,
 				85903B811AEA6E1E002CE96A /* blue_button.png */,
 				859E87901BA2153D0040FA09 /* frame.png */,
@@ -1658,8 +1658,8 @@
 				85D3C5901BADD6150011BC4E /* picture-351-1424541725.jpg in Resources */,
 				85D3C6351BADD7690011BC4E /* picture-47-1423329690.jpg in Resources */,
 				85D3C5E01BADD6150011BC4E /* picture-633-1442282003.jpg in Resources */,
-				8576C9521BB0E0B30098CD93 /* new_member.png in Resources */,
 				85D3C62F1BADD7690011BC4E /* picture-43-1423327490.jpg in Resources */,
+				8576C9561BB0E68B0098CD93 /* new_member.png in Resources */,
 				85D3C4D41BADD6140011BC4E /* picture-199-1423168215.jpg in Resources */,
 				85D3C53C1BADD6150011BC4E /* picture-284-1424539567.jpg in Resources */,
 				85D3C3F81BADD6140011BC4E /* picture-40-1424309100.jpg in Resources */,
