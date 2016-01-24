@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup, element
 from pprint import pprint
 
 from auth import username, password
+import ipdb
 
 errors = []
 
@@ -42,41 +43,46 @@ def login(session, username, password):
 
 def get_member_data(session, cookies):
     members = []
-    url = "http://gmcw.groupanizer.com/g/members/pictures"
-    page = session.get(url, cookies=cookies)
-    soup = BeautifulSoup(page.content)
-    member_lis = soup.findAll("li", {"class" : "member-picture-row"})
     if testing:
-        member_lis = member_lis[64:65] #random middle selection
-    for li in member_lis:
-        member_url = li.find("a")["href"]
-        member_url = "http://gmcw.groupanizer.com" + member_url
-        print member_url
-        member_page = session.get(member_url, cookies=cookies)
-        member_soup = BeautifulSoup(member_page.content)
-        try:
-            nickname = member_soup.find("div", {"class" : "field-name-field-nickname"}).find("div", {"class" : "field-item"}).string
-        except AttributeError:
-            nickname = None
-        member_name = li.find("span", {"class" : "member-name"}).span.string
-        member_name = reverse_name(member_name, nickname)
-        strongs = member_soup.findAll("strong") #Hey, I didn't make the website.
-        roles = strongs[0].next_sibling
-        # roles = [role.strip() for role in roles.split(",")]
-        email = strongs[1].next_sibling.strip()
-        print roles
-        print email
-        try:
-            print member_name
-        except: 
-            print 'error on {}'.format(li)
-        picture_url = li.find("img", typeof="foaf:Image")["src"]
-        picture_name = picture_parser(picture_url)
-        # picture_name = get_picture(session, cookies, picture_url, member_name)
-        if not picture_name:
-            print member_name
-        if all([member_name, picture_name, member_url]):
-            members.append((member_name, picture_name, member_url, roles, email))
+        number_of_pages = 1
+    else:
+        number_of_pages = 10 #hacky but groupanizer sucks
+    for i in range(number_of_pages): 
+        url = "http://gmcw.groupanizer.com/g/members/old?page={}".format(i)
+        page = session.get(url, cookies=cookies)
+        soup = BeautifulSoup(page.content)
+        member_lis = soup.findAll("tr")
+        if testing:
+            member_lis = member_lis[27:28] #random middle selection
+        for li in member_lis:
+            member_partial_url = li.find("a")["href"]
+            member_url = "http://gmcw.groupanizer.com" + member_partial_url
+            member_page = session.get(member_url, cookies=cookies)
+            member_soup = BeautifulSoup(member_page.content)
+            try:
+                nickname = member_soup.find("div", {"class" : "field-name-field-nickname"}).find("div", {"class" : "field-item"}).string
+            except AttributeError:
+                nickname = None
+            try:
+                member_name = member_soup.find("div", {"class" : "field-name-field-full-name"}).find("div", {"class": "even"}).string
+                print member_name
+            except AttributeError:
+                continue
+            member_name = reverse_name(member_name, nickname)
+            strongs = member_soup.findAll("strong") #Hey, I didn't make the website.
+            roles = strongs[0].next_sibling
+            # roles = [role.strip() for role in roles.split(",")]
+            email = strongs[1].next_sibling.strip()
+            try:
+                print member_name
+            except: 
+                print 'error on {}'.format(li)
+            picture_url = li.find("img", typeof="foaf:Image")["src"]
+            picture_name = picture_parser(picture_url)
+            # picture_name = get_picture(session, cookies, picture_url, member_name)
+            print "\n"
+            if all([member_name, picture_name, member_url]):
+                members.append((member_name, picture_name, member_url, roles, email))
     return members
 
 

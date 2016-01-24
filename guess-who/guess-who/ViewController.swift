@@ -69,8 +69,7 @@ class ViewController: UIViewController {
     var playSound:String?
     
     var smallScreen = false
-    
-    
+
     
     
     @IBAction func playAgainPressed(sender: AnyObject) {
@@ -130,12 +129,13 @@ class ViewController: UIViewController {
         
         self.originalContentView.backgroundColor = UIColor(patternImage: UIImage(named: "background_music.jpg")!)
         self.originalContentView.translatesAutoresizingMaskIntoConstraints = true
-        let path = NSBundle.mainBundle().pathForResource("members", ofType:"sqlite3")
+        let path = NSBundle.mainBundle().pathForResource("members2", ofType:"sqlite3")
+        memberDatabase = FMDatabase(path: path)
+        memberDatabase!.open()
         playAgainButton.hidden = true
         newMemberBadge.hidden = true
         newMemberBadge.layer.zPosition = 54
-        memberDatabase = FMDatabase(path: path)
-        memberDatabase!.open()
+
         scoreLabel.title = "\(score)"
         resetGame()
     }
@@ -212,6 +212,7 @@ class ViewController: UIViewController {
     
     func checkAnswer(sender:AnyObject){
         let selectedAnswer = sender.currentTitle!
+        var pauseTime:UInt64 = 1 //amount of time to wait before showing next question
         for button in choiceButtons! {
             button.userInteractionEnabled = false
         }
@@ -225,12 +226,13 @@ class ViewController: UIViewController {
             }
         } else {
             sender.setBackgroundImage(wrongButton, forState: .Normal)
+            pauseTime = 2
             if playSound == "on" {
                 wrongSound.play()
             }
             correctRun = 0
         }
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * 1))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC * pauseTime))
         dispatch_after(delayTime, dispatch_get_main_queue()){
         
             self.turnCount += 1

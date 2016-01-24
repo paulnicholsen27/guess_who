@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plI-Nn-sHs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--About View Controller-->
         <scene sceneID="vhO-Wy-By8">
             <objects>
-                <viewController id="dk2-Tk-qmn" customClass="AboutViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dk2-Tk-qmn" customClass="AboutViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D7a-fX-NRm"/>
                         <viewControllerLayoutGuide type="bottom" id="cfl-SA-jUE"/>
@@ -118,7 +118,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -313,7 +313,7 @@
         <!--Landing View Controller-->
         <scene sceneID="8NC-g8-JZX">
             <objects>
-                <viewController id="plI-Nn-sHs" customClass="LandingViewController" customModule="Know_Your_Members" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="plI-Nn-sHs" customClass="LandingViewController" customModule="guess_who" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIe-wC-iCK"/>
                         <viewControllerLayoutGuide type="bottom" id="aOL-1v-RWI"/>
